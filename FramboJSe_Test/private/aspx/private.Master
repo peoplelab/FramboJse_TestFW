@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Private.Master.cs" Inherits="FramboJSe_Test.MasterPages.Private" %>
+
+<!DOCTYPE html>
+
+<html>
+
+	<head runat="server">
+	
+	<title>FramboJSe_Test - Public</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- ** 3d Partes ** -->
+	<!-- Js: kernel -->
+	<script type="text/javascript" src="/System/3rd-parties/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/System/3rd-parties/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/jscookie/js.cookie.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/fontawesome/js/fontawesome-all.min.js"></script>
+	
+	<!-- Js: settings -->
+	<script type="text/javascript">
+		var __PageScope  = 'private';																	// Declare page scope (Public or Private)
+		var __SYS_config = '';																			// System configuration: Core (framework) definitions
+	</script>
+	<script type="text/javascript" src="/System/3rd-parties/system/system.js"></script>
+	<script type="text/javascript" src="/public/config.pub.js"></script>
+	<script type="text/javascript" src="/private/config.pvt.js"></script>
+	<script type="text/javascript" src="/System/config.sys.js"></script>
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/fontawesome/css/fa-svg-with-js.css">
+
+
+	<!-- ** System ** -->
+	<!-- Js -->
+	<script type="text/javascript" src="/system/FramboJSe_Test.fw/libs/js/main.sys.js"></script>				<!-- ???????????????????? -->
+	<!-- Css -->
+	<link rel="stylesheet" type="text/css" href="/system/resources/css/overrides.sys.css" />
+	<link rel="stylesheet" type="text/css" href="/system/resources/css/typographics.sys.css" />
+	<link rel="stylesheet" type="text/css" href="/system/resources/css/structural.sys.css" />
+
+
+	<!-- ** Application ** -->
+	<link rel="icon" href="/Public/resources/images/favicon.ico?v=2" />
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/application.pvt.css" />
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/palette.pvt.css" />
+	<%--
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/overrides.css" />
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/costanti.css" />
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/tipografici.css" />
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/strutturali.css" />
+	--%>
+	<%--
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/graphics.css" />
+	<link rel="stylesheet" type="text/css" href="/private/resources/css/fromYeap.css" />
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/widgets.css" />
+	--%>
+
+	<asp:ContentPlaceHolder ID="cph_head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+	<form id="form1" runat="server">
+
+		<div id="breakLabelsContainer" class="hide">
+			<span class="viewportStatus d-inline-block d-sm-none">Minimal</span>
+			<span class="viewportStatus d-none d-sm-inline-block d-md-none">Small</span>
+			<span class="viewportStatus d-none d-md-inline-block d-lg-none">Medium</span>
+			<span class="viewportStatus d-none d-lg-inline-block d-xl-none">Large</span>
+			<span class="viewportStatus d-none d-xl-inline-block">Extralarge</span>
+			<span id="xSize"></span>
+		</div>
+
+		<%-- 1: Navbar --%>
+		<div id="navbarContainer"></div>
+
+
+		<%-- 2: section "Sitemap" --%>
+		<asp:ContentPlaceHolder ID="cph_sitemap" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 3: section "pageDashboard" --%>
+		<asp:ContentPlaceHolder ID="cph_dashboard" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 4: section "pageContent" --%>
+		<asp:ContentPlaceHolder ID="cph_pageBody" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 5: section "modalsContainer" --%>
+		<section id="modalsContainer"></section>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+		<div id="preloader" class="hide">
+			<i class="outer spin"></i>
+			<i class="middle spin-reverse"></i>
+			<i class="inner spin"></i>
+		</div>
+
+		<div id="footer" class="navbar">
+			<div class="container">
+			</div>
+		</div>
+
+    </form>
+
+</body>
+</html>

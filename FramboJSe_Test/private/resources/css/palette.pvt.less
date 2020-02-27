@@ -1,0 +1,188 @@
+﻿//----------------------------------------------------------------------------------------
+// File: palette.pvt.less
+//
+// Desc: Definizione della palette dell'applicazione (private)
+// Path: /private/resources/css
+//----------------------------------------------------------------------------------------
+
+@import "../../../system/resources/css/costants.sys.less";
+
+// >>> Dichiarazione colori principali:
+
+	@color1 : #037ac5;
+	@color2 : #6ba2c5;
+	@color3 : #ffcc66;
+	@color4 : mix(@color1, @color3,40%);
+
+
+// >>> Costruzione palette sfumate:
+
+	@color1_00 : mix(@color1, @sys_mainBg,   0%);
+	@color1_05 : mix(@color1, @sys_mainBg,   5%);
+	@color1_10 : mix(@color1, @sys_mainBg,  10%);
+	@color1_15 : mix(@color1, @sys_mainBg,  15%);
+	@color1_20 : mix(@color1, @sys_mainBg,  20%);
+	@color1_25 : mix(@color1, @sys_mainBg,  25%);
+	@color1_30 : mix(@color1, @sys_mainBg,  30%);
+	@color1_35 : mix(@color1, @sys_mainBg,  35%);
+	@color1_40 : mix(@color1, @sys_mainBg,  40%);
+	@color1_45 : mix(@color1, @sys_mainBg,  45%);
+	@color1_50 : mix(@color1, @sys_mainBg,  50%);
+	@color1_55 : mix(@color1, @sys_mainBg,  55%);
+	@color1_60 : mix(@color1, @sys_mainBg,  60%);
+	@color1_65 : mix(@color1, @sys_mainBg,  65%);
+	@color1_70 : mix(@color1, @sys_mainBg,  70%);
+	@color1_75 : mix(@color1, @sys_mainBg,  75%);
+	@color1_80 : mix(@color1, @sys_mainBg,  80%);
+	@color1_85 : mix(@color1, @sys_mainBg,  85%);
+	@color1_90 : mix(@color1, @sys_mainBg,  90%);
+	@color1_95 : mix(@color1, @sys_mainBg,  95%);
+	@color1_100: mix(@color1, @sys_mainBg, 100%);
+
+	@color2_00 : mix(@color2, @sys_mainBg,   0%);
+	@color2_05 : mix(@color2, @sys_mainBg,   5%);
+	@color2_10 : mix(@color2, @sys_mainBg,  10%);
+	@color2_15 : mix(@color2, @sys_mainBg,  15%);
+	@color2_20 : mix(@color2, @sys_mainBg,  20%);
+	@color2_25 : mix(@color2, @sys_mainBg,  25%);
+	@color2_30 : mix(@color2, @sys_mainBg,  30%);
+	@color2_35 : mix(@color2, @sys_mainBg,  35%);
+	@color2_40 : mix(@color2, @sys_mainBg,  40%);
+	@color2_45 : mix(@color2, @sys_mainBg,  45%);
+	@color2_50 : mix(@color2, @sys_mainBg,  50%);
+	@color2_55 : mix(@color2, @sys_mainBg,  55%);
+	@color2_60 : mix(@color2, @sys_mainBg,  60%);
+	@color2_65 : mix(@color2, @sys_mainBg,  65%);
+	@color2_70 : mix(@color2, @sys_mainBg,  70%);
+	@color2_75 : mix(@color2, @sys_mainBg,  75%);
+	@color2_80 : mix(@color2, @sys_mainBg,  80%);
+	@color2_85 : mix(@color2, @sys_mainBg,  85%);
+	@color2_90 : mix(@color2, @sys_mainBg,  90%);
+	@color2_95 : mix(@color2, @sys_mainBg,  95%);
+	@color2_100: mix(@color2, @sys_mainBg, 100%);
+
+	@color3_00 : mix(@color3, @sys_mainBg,   0%);
+	@color3_05 : mix(@color3, @sys_mainBg,   5%);
+	@color3_10 : mix(@color3, @sys_mainBg,  10%);
+	@color3_15 : mix(@color3, @sys_mainBg,  15%);
+	@color3_20 : mix(@color3, @sys_mainBg,  20%);
+	@color3_25 : mix(@color3, @sys_mainBg,  25%);
+	@color3_30 : mix(@color3, @sys_mainBg,  30%);
+	@color3_35 : mix(@color3, @sys_mainBg,  35%);
+	@color3_40 : mix(@color3, @sys_mainBg,  40%);
+	@color3_45 : mix(@color3, @sys_mainBg,  45%);
+	@color3_50 : mix(@color3, @sys_mainBg,  50%);
+	@color3_55 : mix(@color3, @sys_mainBg,  55%);
+	@color3_60 : mix(@color3, @sys_mainBg,  60%);
+	@color3_65 : mix(@color3, @sys_mainBg,  65%);
+	@color3_70 : mix(@color3, @sys_mainBg,  70%);
+	@color3_75 : mix(@color3, @sys_mainBg,  75%);
+	@color3_80 : mix(@color3, @sys_mainBg,  80%);
+	@color3_85 : mix(@color3, @sys_mainBg,  85%);
+	@color3_90 : mix(@color3, @sys_mainBg,  90%);
+	@color3_95 : mix(@color3, @sys_mainBg,  95%);
+	@color3_100: mix(@color3, @sys_mainBg, 100%);
+
+	@color4_00 : mix(@color4, @sys_mainBg,   0%);
+	@color4_05 : mix(@color4, @sys_mainBg,   5%);
+	@color4_10 : mix(@color4, @sys_mainBg,  10%);
+	@color4_15 : mix(@color4, @sys_mainBg,  15%);
+	@color4_20 : mix(@color4, @sys_mainBg,  20%);
+	@color4_25 : mix(@color4, @sys_mainBg,  25%);
+	@color4_30 : mix(@color4, @sys_mainBg,  30%);
+	@color4_35 : mix(@color4, @sys_mainBg,  35%);
+	@color4_40 : mix(@color4, @sys_mainBg,  40%);
+	@color4_45 : mix(@color4, @sys_mainBg,  45%);
+	@color4_50 : mix(@color4, @sys_mainBg,  50%);
+	@color4_55 : mix(@color4, @sys_mainBg,  55%);
+	@color4_60 : mix(@color4, @sys_mainBg,  60%);
+	@color4_65 : mix(@color4, @sys_mainBg,  65%);
+	@color4_70 : mix(@color4, @sys_mainBg,  70%);
+	@color4_75 : mix(@color4, @sys_mainBg,  75%);
+	@color4_80 : mix(@color4, @sys_mainBg,  80%);
+	@color4_85 : mix(@color4, @sys_mainBg,  85%);
+	@color4_90 : mix(@color4, @sys_mainBg,  90%);
+	@color4_95 : mix(@color4, @sys_mainBg,  95%);
+	@color4_100: mix(@color4, @sys_mainBg, 100%);
+
+	@mix1_00 : mix(@color3, @color1,   0%);
+	@mix1_05 : mix(@color3, @color1,   5%);
+	@mix1_10 : mix(@color3, @color1,  10%);
+	@mix1_15 : mix(@color3, @color1,  15%);
+	@mix1_20 : mix(@color3, @color1,  20%);
+	@mix1_25 : mix(@color3, @color1,  25%);
+	@mix1_30 : mix(@color3, @color1,  30%);
+	@mix1_35 : mix(@color3, @color1,  35%);
+	@mix1_40 : mix(@color3, @color1,  40%);
+	@mix1_45 : mix(@color3, @color1,  45%);
+	@mix1_50 : mix(@color3, @color1,  50%);
+	@mix1_55 : mix(@color3, @color1,  55%);
+	@mix1_60 : mix(@color3, @color1,  60%);
+	@mix1_65 : mix(@color3, @color1,  65%);
+	@mix1_70 : mix(@color3, @color1,  70%);
+	@mix1_75 : mix(@color3, @color1,  75%);
+	@mix1_80 : mix(@color3, @color1,  80%);
+	@mix1_85 : mix(@color3, @color1,  85%);
+	@mix1_90 : mix(@color3, @color1,  90%);
+	@mix1_95 : mix(@color3, @color1,  95%);
+	@mix1_100: mix(@color3, @color1, 100%);
+
+	@mix2_00 : mix(@black_30, @color1,   0%);
+	@mix2_05 : mix(@black_30, @color1,   5%);
+	@mix2_10 : mix(@black_30, @color1,  10%);
+	@mix2_15 : mix(@black_30, @color1,  15%);
+	@mix2_20 : mix(@black_30, @color1,  20%);
+	@mix2_25 : mix(@black_30, @color1,  25%);
+	@mix2_30 : mix(@black_30, @color1,  30%);
+	@mix2_35 : mix(@black_30, @color1,  35%);
+	@mix2_40 : mix(@black_30, @color1,  40%);
+	@mix2_45 : mix(@black_30, @color1,  45%);
+	@mix2_50 : mix(@black_30, @color1,  50%);
+	@mix2_55 : mix(@black_30, @color1,  55%);
+	@mix2_60 : mix(@black_30, @color1,  60%);
+	@mix2_65 : mix(@black_30, @color1,  65%);
+	@mix2_70 : mix(@black_30, @color1,  70%);
+	@mix2_75 : mix(@black_30, @color1,  75%);
+	@mix2_80 : mix(@black_30, @color1,  80%);
+	@mix2_85 : mix(@black_30, @color1,  85%);
+	@mix2_90 : mix(@black_30, @color1,  90%);
+	@mix2_95 : mix(@black_30, @color1,  95%);
+	@mix2_100: mix(@black_30, @color1, 100%);
+
+
+
+	.generate-colors(@color, @alias, @from, @to, @step) when (@from =< @to) {
+
+		& when ( @from >= 10) {
+			.@{color}_@{from}       {color       : ~"@{@{color}_@{from}}";}
+			.bg@{alias}_@{from}     {background  : ~"@{@{color}_@{from}}";}
+			.border@{alias}_@{from} {border-color: ~"@{@{color}_@{from}}";}
+		}
+		
+		& when ( @from < 10) {
+			.@{color}_0@{from}       {color       : ~"@{@{color}_0@{from}}";}
+			.bg@{alias}_0@{from}     {background  : ~"@{@{color}_0@{from}}";}
+			.border@{alias}_0@{from} {border-color: ~"@{@{color}_0@{from}}";}
+		}
+		
+		.generate-colors(@color, @alias, (@from + @step), @to, @step);
+
+	}
+	// Esecuzione:
+	.generate-colors(color1, Color1, 0, 100, 5);
+	.generate-colors(color2, Color2, 0, 100, 5);
+	.generate-colors(color3, Color3, 0, 100, 5);
+	.generate-colors(color4, Color4, 0, 100, 5);
+	.generate-colors(mix1, Mix1, 0, 100, 5);
+	.generate-colors(mix2, Mix2, 0, 100, 5);
+
+
+	// Generazione classi colori "puri" (100%) senza bisogno del suffisso "_100"
+	.generate-colors-2 (@from, @to) when (@from =< @to) {
+		@color: "color@{from}";
+		.color@{from}       {color       : ~"@{@{color}}";}
+		.bgColor@{from}     {background  : ~"@{@{color}}";}
+		.borderColor@{from} {border-color: ~"@{@{color}}";}
+		.generate-colors-2 ((@from + 1), @to);
+	}
+	.generate-colors-2(1, 4);

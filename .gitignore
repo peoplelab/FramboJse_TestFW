@@ -5,3 +5,6 @@
 /.vs/slnx.sqlite
 /.vs/FramboJse_TestFW/v16/.suo
 /.vs
+/FramboJSe_Test/bin
+/FramboJSe_Test/obj/Debug
+/packages

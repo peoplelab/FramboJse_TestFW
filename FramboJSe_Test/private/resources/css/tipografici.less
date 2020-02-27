@@ -1,0 +1,66 @@
+﻿// -----------------------------------------------------------------------
+// NAME: costanti.less
+//
+// Definizione delle costanti di stile dell'applicazione
+// Il file viene incluso in ogni file .LESS
+// -----------------------------------------------------------------------
+
+@import "./costanti.less";
+
+
+
+
+
+// Card info (collapsible)
+.card.card-info {
+		
+	.card-title-settings {
+
+		a {
+			/*color     : #fff;
+			display   : block;
+			text-align: left;
+			font-size : 20px;
+			text-transform: uppercase;*/
+
+			.ico {
+				float: right;
+                margin-left: 10px;
+			}
+			&[aria-expanded=true]  .ico-open  { display: inline-block;}
+			&[aria-expanded=true]  .ico-close { display: none;}
+			&[aria-expanded=false] .ico-open  { display: none;}
+			&[aria-expanded=false] .ico-close { display: inline-block;}
+		}
+	}
+    
+	.card-body {
+		padding: 10px 20px;
+		border : 1px solid #ccc;
+	}
+
+	.card.best ul, .card.worst ul {
+		span {
+			float: right;
+		}
+		&.old label{
+			color: #999;
+		}
+	}
+
+	.locked {
+		font-style: italic;
+		&.card-title-economics {background: desaturate(@yeapBlue1, 20%);}
+		&.collapse {background: #f4f4f4;}
+
+	}
+}
+
+#NoPIVA {
+    position: relative;
+    top: -1px;
+}
+
+.piva-question{
+    display: inline-flex;
+}

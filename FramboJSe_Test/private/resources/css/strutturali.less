@@ -1,0 +1,235 @@
+// -----------------------------------------------------------------------
+// NAME: costanti.less
+//
+// Definizione delle costanti di stile dell'applicazione
+// Il file viene incluso in ogni file .LESS
+// -----------------------------------------------------------------------
+
+@import "./costanti.less";
+
+
+// =========================
+//  Architettura pagina
+// -------------------------
+
+	// ** Sezione Dashboard **
+	#dashboard {
+		position: fixed;
+		z-index : 110;
+		width   : 100%;
+		left    : 0;
+		top     : 0px;
+	} 
+
+
+	#menuContainer {						// §§§§§ VA PORTATO IL CONTENUTO DI FROMYEAP.LESS §§§§§
+		width: @menuWidth;
+		float: left;
+
+		#mainLogo {
+			text-align: center;
+			padding   : 10px 0;
+			background: @blueMenu_20;	//#ddf;
+			margin    : 0 15px 2px;
+
+			//h1 {color: #666}
+			h1 {color: @greyGrid_100;}
+		}
+		.svg-inline--fa {
+			font-size: 20px;
+		}
+		.menuIco .svg-inline--fa {
+			display: none;
+		}
+		.menuTxt {
+			display: block
+		}
+
+		.menuItem {
+		    padding-left: 20px;
+			.svg-inline--fa {
+				margin-right: 20px;
+			}
+		}
+		
+		&.reduced {
+			//overflow: hidden;
+			.menuItem {
+				padding-left: 15px;
+			}
+			.menuIco .svg-inline--fa {
+				display: inline-block;
+				//margin : 16px 0 0 10px;
+			}
+			.menuTxt {
+				display: none;
+			}
+			#mainLogo {
+				h1 {text-indent: -5000px;}
+			}
+		}
+	}
+
+	#mainContainer {
+		margin-left: @menuWidth;
+	}
+
+
+
+.inner-loader {
+	
+	@size1: 60px;
+	@spinTime: 4s;
+
+	position: relative;
+	height: @size1;
+	width: @size1;
+	margin: 0 auto;
+
+	.outer, .middle, .inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-width: 4px;
+		border-style: solid;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+	}
+
+	@color: @blueMenu_80;
+	@passo: 15px;
+	@size2: (@size1 - @passo);
+	@size3: (@size2 - @passo);
+	
+	.outer {
+		border-color: darken(@color, 10%);
+		border-right-color: rgba(0, 0, 0, 0) !important;
+		margin: -(@size1 / 2) 0 0 -(@size1 / 2);
+		width : @size1;
+		height: @size1;
+	}
+	.middle {
+		border-color: @color;
+		border-top-color: rgba(0, 0, 0, 0) !important;
+		margin: -(@size2 / 2) 0 0 -(@size2 / 2);
+		width : @size2;
+		height: @size2;
+	}
+	.inner {
+		border-color: lighten(@color, 15%);
+		border-left-color: rgba(0, 0, 0, 0) !important;
+		margin: -(@size3 / 2) 0 0 -(@size3 / 2);
+		width : @size3;
+		height: @size3;
+	}
+	.spin {
+    -webkit-animation: fa-spin 3s infinite linear;
+    animation: fa-spin @spinTime infinite linear;
+	}
+	.spin-reverse {
+    -webkit-animation: fa-spin 3s infinite linear reverse;
+    animation: fa-spin @spinTime infinite linear reverse;
+	}
+
+}
+
+
+
+// ===================================
+//  Alert box ed elementi informativi
+// -----------------------------------
+	
+	// ** Message container **
+	.alertBox {
+
+		padding: 10px 15px;
+
+		span.glyphicon {
+			float: left;
+			font-size: 40px;
+			margin: 10px 15px;
+		}
+
+		&.notFound {
+			background-color: fadeout(@main_orange, 70%);
+			border: solid 2px @main_orange;
+			color: darken(@main_orange, 0%);
+
+			.svg-inline--fa {
+				font-size: 50px;
+				color: @main_orange
+			}
+		}
+	}
+
+
+	// Card info (collapsible)
+	.card.card-info.result {
+		/*--
+		.card-title {
+			background: #555;
+			margin    : 0;
+
+			a {
+				color     : #fff;
+				display   : block;
+				text-align: left;
+
+				.ico {
+					float: right;
+				}
+				&[aria-expanded=true]  .ico-open  { display: inline-block;}
+				&[aria-expanded=true]  .ico-close { display: none;}
+				&[aria-expanded=false] .ico-open  { display: none;}
+				&[aria-expanded=false] .ico-close { display: inline-block;}
+			}
+			&:hover {
+				background: #666;
+			}
+			h4 {
+				color: #fff;
+				font-size: 16px;
+				padding: 5px 10px;
+			}
+		}
+		.card-body {
+			padding: 10px 20px;
+			border : 1px solid #ccc;
+		}
+
+		.card.best ul, .card.worst ul {
+			span {
+				float: right;
+			}
+			&.old label{
+				color: #999;
+			}
+		}
+		--*/
+	}
+	.noResult {
+		padding: 15px;
+		background: #e8e8e8;
+		border: solid 2px #666;
+	}
+
+
+
+// >>> Tutti da sistemare
+.collapseClose {display: none}
+.collapseOpen  {display: inline-block}
+.collapsed {
+	.collapseClose {display: inline-block !important;}
+	.collapseOpen  {display: none !important;}
+}
+
+.btn-accordion {
+	width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+
+

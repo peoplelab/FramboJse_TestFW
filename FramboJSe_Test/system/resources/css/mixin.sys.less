@@ -1,0 +1,28 @@
+﻿//----------------------------------------------------------------------------------------
+// File: mixin.sys.less
+//
+// Desc: Definizione dei mixin (funzioni) di sistema, richiamati da differenti Less.
+// Path: /system/resources/css
+//----------------------------------------------------------------------------------------
+// Content:
+//	-  Border-radius
+//	-  Definizioni generali
+//	-  Controlli: input, select, radiobutton
+//----------------------------------------------------------------------------------------
+
+
+
+@import "./costants.sys.less";
+
+
+// >>> Border-radius : costruttore stile Bordi arrotondati
+	
+	// Params: 
+	// @borderRadius : dimensione (raggio) dei quattro angoli 
+	.border-radius(@borderRadius) {
+
+	  -webkit-border-radius: @borderRadius;
+	  -moz-border-radius   : @borderRadius;
+	  border-radius        : @borderRadius;
+   
+	}

@@ -1,0 +1,560 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FramboJSe_Test</RootNamespace>
+    <AssemblyName>FramboJSe_Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\errormessages.xml" />
+    <Content Include="App_Data\routing.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="private\aspx\demo.aspx" />
+    <Content Include="private\aspx\login.aspx" />
+    <Content Include="private\aspx\Main.pvt.settings.aspx" />
+    <Content Include="private\aspx\master.demo.pvt.aspx" />
+    <Content Include="private\aspx\master.home.pvt.aspx" />
+    <Content Include="private\config.pvt.js" />
+    <Content Include="private\config-old.pvt.js" />
+    <Content Include="private\framboJSe.ext\routerList.pvt.js" />
+    <Content Include="private\modules\home\controller\home.controller.js" />
+    <Content Include="private\modules\home\model\home.model.js" />
+    <Content Include="private\modules\home\presenter\home.presenter.js" />
+    <Content Include="private\modules\demo\controller\demo.controller.js" />
+    <Content Include="private\modules\demo\model\demo.model.js" />
+    <Content Include="private\modules\demo\presenter\demo.presenter.js" />
+    <Content Include="private\modules\login\controller\login.controller.js" />
+    <Content Include="private\modules\login\model\login.model.js" />
+    <Content Include="private\modules\login\presenter\login.presenter.js" />
+    <Content Include="private\modules\myModuleSample\controller\mySample.controller.js" />
+    <Content Include="private\modules\myModuleSample\model\mySample.model.js" />
+    <Content Include="private\modules\myModuleSample\presenter\mySample.presenter.js" />
+    <Content Include="private\resources\css\application.pvt.css">
+      <DependentUpon>application.pvt.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\application.pvt.min.css">
+      <DependentUpon>application.pvt.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\costanti.css">
+      <DependentUpon>costanti.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\costanti.min.css">
+      <DependentUpon>costanti.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\datagrid.css">
+      <DependentUpon>datagrid.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\datagrid.min.css">
+      <DependentUpon>datagrid.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\fromYeap.css">
+      <DependentUpon>fromYeap.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\fromYeap.min.css">
+      <DependentUpon>fromYeap.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\graphics.css">
+      <DependentUpon>graphics.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\graphics.min.css">
+      <DependentUpon>graphics.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\overrides.css">
+      <DependentUpon>overrides.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\overrides.min.css">
+      <DependentUpon>overrides.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\palette.pvt.css">
+      <DependentUpon>palette.pvt.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\palette.pvt.min.css">
+      <DependentUpon>palette.pvt.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\strutturali.css">
+      <DependentUpon>strutturali.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\strutturali.min.css">
+      <DependentUpon>strutturali.css</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\tipografici.css">
+      <DependentUpon>tipografici.less</DependentUpon>
+    </Content>
+    <Content Include="private\resources\css\tipografici.min.css">
+      <DependentUpon>tipografici.css</DependentUpon>
+    </Content>
+    <Content Include="private\templates\demo\index.html" />
+    <Content Include="private\templates\home\home.html" />
+    <Content Include="private\templates\home\new_home.html" />
+    <Content Include="private\templates\login\login.html" />
+    <Content Include="private\templates\login\new_home.html" />
+    <Content Include="private\templates\templatesList.pvt.js" />
+    <Content Include="public\config.pub.js" />
+    <Content Include="public\FramboJSe_Test.ext\snippets\snippetsList.pub.js" />
+    <Content Include="public\FramboJSe_Test.ext\widgets\widgetsList.pub.js" />
+    <Content Include="public\modules\myModuleSample\controller\mySample.controller.js" />
+    <Content Include="public\modules\myModuleSample\model\mySample.model.js" />
+    <Content Include="public\modules\myModuleSample\presenter\mySample.presenter.js" />
+    <Content Include="public\templates\templatesList.pub.js" />
+    <Content Include="public\ws\Base.asmx" />
+    <Content Include="public\ws\General.asmx" />
+    <Content Include="public\ws\Login.asmx" />
+    <Content Include="public\ws\xsd\Login.xml" />
+    <Content Include="reserved\aspx\home.aspx" />
+    <Content Include="reserved\config.rsv.js" />
+    <Content Include="reserved\config-old.rsv.js" />
+    <Content Include="reserved\framboJSe.ext\routerList.rsv.js" />
+    <Content Include="reserved\framboJSe.ext\sitemapCustomization.pvt.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\dd_elenchiQA.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\dd_settoriAzienda.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\dd_tipologieAzienda.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\infoPopup.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\labelCode.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\snippetsList.pvt.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\XML_label.js" />
+    <Content Include="reserved\framboJSe.ext\snippets\XML_label_economics.js" />
+    <Content Include="reserved\framboJSe.ext\widgets\btnConsole.js" />
+    <Content Include="reserved\framboJSe.ext\widgets\drawerTitle.js" />
+    <Content Include="reserved\framboJSe.ext\widgets\input_scaled.js" />
+    <Content Include="reserved\framboJSe.ext\widgets\widgetsList.pvt.js" />
+    <Content Include="reserved\modules\home\controller\home.controller.js" />
+    <Content Include="reserved\resources\css\costanti.css" />
+    <Content Include="reserved\resources\css\costanti.min.css" />
+    <Content Include="reserved\resources\css\datagrid.css" />
+    <Content Include="reserved\resources\css\datagrid.min.css" />
+    <Content Include="reserved\resources\css\fromYeap.css" />
+    <Content Include="reserved\resources\css\fromYeap.min.css" />
+    <Content Include="reserved\resources\css\graphics.css" />
+    <Content Include="reserved\resources\css\graphics.min.css" />
+    <Content Include="reserved\resources\css\main.pub.css" />
+    <Content Include="reserved\resources\css\main.pub.min.css" />
+    <Content Include="reserved\resources\css\overrides.css" />
+    <Content Include="reserved\resources\css\overrides.min.css" />
+    <Content Include="reserved\resources\css\strutturali.css" />
+    <Content Include="reserved\resources\css\strutturali.min.css" />
+    <Content Include="reserved\resources\css\tipografici.css" />
+    <Content Include="reserved\resources\css\tipografici.min.css" />
+    <Content Include="reserved\resources\images\favicon.ico" />
+    <Content Include="reserved\resources\images\favicon32.ico" />
+    <Content Include="reserved\resources\images\favicon32.png" />
+    <Content Include="reserved\resources\images\pmLogo.gif" />
+    <Content Include="system\3rd-parties\bootstrap\css\bootstrap.min.css" />
+    <Content Include="system\3rd-parties\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="system\3rd-parties\colorbox\colorbox.css" />
+    <Content Include="system\3rd-parties\colorbox\images\border.png" />
+    <Content Include="system\3rd-parties\colorbox\images\controls.png" />
+    <Content Include="system\3rd-parties\colorbox\images\loading.gif" />
+    <Content Include="system\3rd-parties\colorbox\images\loading_background.png" />
+    <Content Include="system\3rd-parties\colorbox\images\overlay.png" />
+    <Content Include="system\3rd-parties\colorbox\jquery.colorbox-min.js" />
+    <Content Include="system\3rd-parties\datepicker\bootstrap-datepicker.it.min.js" />
+    <Content Include="system\3rd-parties\datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="system\3rd-parties\datepicker\datepicker.css" />
+    <Content Include="system\3rd-parties\datepicker\datepicker.min.css" />
+    <Content Include="system\3rd-parties\fontawesome\css\fa-svg-with-js.css" />
+    <Content Include="system\3rd-parties\fontawesome\js\fontawesome-all.min.js" />
+    <Content Include="system\3rd-parties\jcrop\css\Jcrop.gif" />
+    <Content Include="system\3rd-parties\jcrop\css\jquery.Jcrop.min.css" />
+    <Content Include="system\3rd-parties\jcrop\js\jquery.Jcrop.min.js" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="system\3rd-parties\jquery-ui\jquery-ui.min.css" />
+    <Content Include="system\3rd-parties\jquery-ui\jquery-ui.min.js" />
+    <Content Include="system\3rd-parties\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="system\3rd-parties\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="system\3rd-parties\jquery\jquery-migrate-3.0.0.min.js" />
+    <Content Include="system\3rd-parties\jquery\jquery.min.js" />
+    <Content Include="system\3rd-parties\jscookie\js.cookie.js" />
+    <Content Include="system\3rd-parties\md5\md5.js" />
+    <Content Include="system\3rd-parties\system\system.js" />
+    <Content Include="system\3rd-parties\tablesorter\jquery.tablesorter.min.js" />
+    <Content Include="system\3rd-parties\tablesorter\jquery.tablesorter.widgets.min.js" />
+    <Content Include="system\3rd-parties\_datepicker\bootstrap-datepicker.it.js" />
+    <Content Include="system\3rd-parties\_datepicker\bootstrap-datepicker.it.min.js" />
+    <Content Include="system\3rd-parties\_datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="system\3rd-parties\_datepicker\datepicker.min.css" />
+    <Content Include="system\3rd-parties\_datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="system\config-new.sys.js" />
+    <Content Include="system\config.sys.js" />
+    <Content Include="system\FramboJSe_Test.fw\controller\base.controller.js" />
+    <Content Include="system\FramboJSe_Test.fw\controller\router.controller.js" />
+    <Content Include="system\FramboJSe_Test.fw\controller\sitemap.controller.js" />
+    <Content Include="system\FramboJSe_Test.fw\libs\img\icon_pdf.gif" />
+    <Content Include="system\FramboJSe_Test.fw\libs\js\main.sys.js" />
+    <Content Include="system\FramboJSe_Test.fw\model\base.model.js" />
+    <Content Include="system\FramboJSe_Test.fw\model\constants.model.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\base.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\default.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\modals.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\sitemap.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippetsHandler.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_add.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_delete.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_detail.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_edit.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_go.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_next.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\button_prev.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_base.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_calendar_days.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_calendar_months.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_calendar_years.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_custom.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\dd_operators_equal.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\glyph_info.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\glyph_mandatory.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\glyph_pageStatus.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\group_dashboard.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_hidden.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_integer.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_kernel.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_password.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_range.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\input_text.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\label.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\snippetsList.sys.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\snippets\textarea.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\templatesHandler.presenter.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\datePicker.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\setsHours.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\setsNumber.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\slider.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\switcher.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\timePicker.js" />
+    <Content Include="system\FramboJSe_Test.fw\presenter\widgets\widgetsList.sys.js" />
+    <Content Include="system\resources\css\costants.sys.css">
+      <DependentUpon>costants.sys.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\costants.sys.min.css">
+      <DependentUpon>costants.sys.css</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\overrides.sys - Copia.css">
+      <DependentUpon>overrides.sys - Copia.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\overrides.sys - Copia.min.css">
+      <DependentUpon>overrides.sys - Copia.css</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\overrides.sys.css">
+      <DependentUpon>overrides.sys.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\overrides.sys.min.css">
+      <DependentUpon>overrides.sys.css</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\structural.sys - Copia.css">
+      <DependentUpon>structural.sys - Copia.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\structural.sys - Copia.min.css">
+      <DependentUpon>structural.sys - Copia.css</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\structural.sys.css">
+      <DependentUpon>structural.sys.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\structural.sys.min.css">
+      <DependentUpon>structural.sys.css</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\typographics.sys.css">
+      <DependentUpon>typographics.sys.less</DependentUpon>
+    </Content>
+    <Content Include="system\resources\css\typographics.sys.min.css">
+      <DependentUpon>typographics.sys.css</DependentUpon>
+    </Content>
+    <Content Include="system\startup.sys.js" />
+    <Content Include="system\pages\404.html" />
+    <Content Include="system\pages\genericError.html" />
+    <Content Include="system\pages\unauthorized.html" />
+    <Content Include="system\templates\modal_choose.html" />
+    <Content Include="system\templates\modal_confirm.html" />
+    <Content Include="system\templates\modal_error.html" />
+    <Content Include="system\templates\modal_info.html" />
+    <Content Include="system\templates\modal_login.html" />
+    <Content Include="system\templates\modal_ok.html" />
+    <Content Include="system\templates\templatesList.sys.js" />
+    <Content Include="system\wrappers\wrapper.datepicker.js" />
+    <Content Include="system\wrappers\wrapper.google_maps.js" />
+    <Content Include="system\wrappers\wrapper.jcrop.js" />
+    <Content Include="system\wrappers\wrapper.tablesorter.js" />
+    <Content Include="Web.config" />
+    <Content Include="wiki\3rd_parties.txt" />
+    <Content Include="wiki\snippet.txt" />
+    <Content Include="wiki\widget.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Common\Routing\Routing.cs" />
+    <Compile Include="App_Code\Serializers\Base\Request.cs" />
+    <Compile Include="App_Code\Serializers\Base\Response.cs" />
+    <Compile Include="App_Code\Serializers\General_SET\Request.cs" />
+    <Compile Include="App_Code\Serializers\General_SET\Response.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\Main.pvt.Master.cs">
+      <DependentUpon>Main.pvt.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\Main.pvt.Master.designer.cs">
+      <DependentUpon>Main.pvt.Master</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\Main.pvt.settings.aspx.cs">
+      <DependentUpon>Main.pvt.settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\Main.pvt.settings.aspx.designer.cs">
+      <DependentUpon>Main.pvt.settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\master.demo.pvt.aspx.cs">
+      <DependentUpon>master.demo.pvt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\master.demo.pvt.aspx.designer.cs">
+      <DependentUpon>master.demo.pvt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\master.home.pvt.aspx.cs">
+      <DependentUpon>master.home.pvt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\master.home.pvt.aspx.designer.cs">
+      <DependentUpon>master.home.pvt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="private\aspx\private.Master.cs">
+      <DependentUpon>private.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="private\aspx\private.Master.designer.cs">
+      <DependentUpon>private.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="public\ws\Base.asmx.cs">
+      <DependentUpon>Base.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="public\ws\General.asmx.cs">
+      <DependentUpon>General.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reserved\aspx\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reserved\aspx\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reserved\aspx\reserved.Master.cs">
+      <DependentUpon>reserved.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reserved\aspx\reserved.Master.designer.cs">
+      <DependentUpon>reserved.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="system\3rd-parties\datepicker\datepicker.less" />
+    <Content Include="system\3rd-parties\_datepicker\datepicker.less" />
+    <Content Include="reserved\aspx\reserved.Master" />
+    <Content Include="reserved\resources\css\costanti.less" />
+    <Content Include="reserved\resources\css\datagrid.less" />
+    <Content Include="reserved\resources\css\fromYeap.less" />
+    <Content Include="reserved\resources\css\graphics.less" />
+    <Content Include="reserved\resources\css\main.pub.css.map" />
+    <Content Include="reserved\resources\css\overrides.less" />
+    <Content Include="reserved\resources\css\strutturali.less" />
+    <Content Include="reserved\resources\css\tipografici.less" />
+    <Content Include="private\aspx\private.Master" />
+    <Content Include="private\resources\css\costanti.less" />
+    <Content Include="private\resources\css\datagrid.less" />
+    <Content Include="private\resources\css\fromYeap.less" />
+    <Content Include="private\resources\css\graphics.less" />
+    <Content Include="private\resources\css\overrides.less" />
+    <Content Include="private\resources\css\strutturali.less" />
+    <Content Include="private\resources\css\tipografici.less" />
+    <Content Include="system\resources\css\costants.sys.less" />
+    <Content Include="system\resources\css\structural.sys.less" />
+    <Content Include="system\resources\css\typographics.sys.less" />
+    <Content Include="system\resources\css\overrides.sys.less" />
+    <Content Include="private\resources\css\application.pvt.less" />
+    <Content Include="private\resources\css\palette.pvt.less" />
+    <Content Include="system\resources\css\mixin.sys.less" />
+    <Content Include="system\resources\css\overrides.sys - Copia.less" />
+    <Content Include="system\resources\css\structural.sys - Copia.less" />
+    <Content Include="private\aspx\Main.pvt.Master" />
+    <None Include="Properties\PublishProfiles\FramboJSe.pubxml" />
+    <None Include="public\ws\xsd\Login.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Deploy.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="private\framboJSe.ext\snippets\" />
+    <Folder Include="private\framboJSe.ext\widgets\" />
+    <Folder Include="private\resources\images\" />
+    <Folder Include="private\resources\js\" />
+    <Folder Include="private\resources\pdf\" />
+    <Folder Include="private\templates\moduleName\" />
+    <Folder Include="private\xml\" />
+    <Folder Include="public\aspx\" />
+    <Folder Include="public\modules\common\controller\" />
+    <Folder Include="public\modules\common\model\" />
+    <Folder Include="public\modules\common\presenter\" />
+    <Folder Include="public\resources\css\" />
+    <Folder Include="public\resources\images\" />
+    <Folder Include="public\resources\js\" />
+    <Folder Include="public\resources\pdf\" />
+    <Folder Include="public\templates\moduleName\" />
+    <Folder Include="public\xml\" />
+    <Folder Include="reserved\framboJSe.ext\plugins\" />
+    <Folder Include="reserved\modules\home\model\" />
+    <Folder Include="reserved\modules\home\presenter\" />
+    <Folder Include="reserved\resources\css\datagrid\" />
+    <Folder Include="reserved\resources\js\" />
+    <Folder Include="reserved\resources\pdf\" />
+    <Folder Include="reserved\templates\" />
+    <Folder Include="system\FramboJSe_Test.fw\libs\css\" />
+    <Folder Include="system\resources\images\" />
+    <Folder Include="system\resources\js\" />
+    <Folder Include="system\resources\pdf\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56812</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

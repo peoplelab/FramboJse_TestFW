@@ -1,0 +1,356 @@
+﻿//----------------------------------------------------------------------------------------
+// File: structural.sys.less
+//
+// Desc: Definizione degli stili strutturali globali del framework
+// Path: /system/resources/css
+//----------------------------------------------------------------------------------------
+// Content:
+//  - Classi generali
+//  - Preloader
+//  - Finestre modali
+//  - Pulsanti standard
+//  - Switcher (checkbox grafica)
+//----------------------------------------------------------------------------------------
+
+
+
+@import "./costants.sys.less";
+
+
+// >>> Classi generali:
+
+	.sysOk        {color     : @sys_ok;}
+	.sysError     {color     : @sys_error;}
+	.sysWarning   {color     : @sys_warning;}
+	.sysInfo      {color     : @sys_info;}
+	.sysOkBg      {background: @sys_okBg;}
+	.sysErrorBg   {background: @sys_errorBg;}
+	.sysWarningBg {background: @sys_warningBg;}
+	.sysInfoBg    {background: @sys_infoBg;}
+
+
+
+// >>> Preloader:
+	#preloader {
+
+		position: fixed;
+		top: 0px;
+		left: 0;
+		z-index: 999;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 80, 128, .1);
+
+		.outer, .middle, .inner {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			border-width: 6px;
+			border-style: solid;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+		}
+
+		@color: #369;
+		@passo: 24px;
+		@size1: 100px;
+		@size2: (@size1 - @passo);
+		@size3: (@size2 - @passo);
+	
+		.outer {
+			border-color: darken(@color, 10%);
+			border-right-color: rgba(0, 0, 0, 0) !important;
+			margin: -(@size1 / 2) 0 0 -(@size1 / 2);
+			width : @size1;
+			height: @size1;
+		}
+		.middle {
+			border-color: @color;
+			border-top-color: rgba(0, 0, 0, 0) !important;
+			margin: -(@size2 / 2) 0 0 -(@size2 / 2);
+			width : @size2;
+			height: @size2;
+		}
+		.inner {
+			border-color: lighten(@color, 15%);
+			border-left-color: rgba(0, 0, 0, 0) !important;
+			margin: -(@size3 / 2) 0 0 -(@size3 / 2);
+			width : @size3;
+			height: @size3;
+		}
+		.spin {
+		-webkit-animation: fa-spin 2s infinite linear;
+		animation: fa-spin 2s infinite linear;
+		}
+		.spin-reverse {
+		-webkit-animation: fa-spin 2s infinite linear reverse;
+		animation: fa-spin 2s infinite linear reverse;
+		}
+
+	}
+
+
+
+// >>> Finestre modali:
+
+	#modal {
+
+		@modalRadius: 15px;
+
+		.modal-content {border-radius: @modalRadius;}
+
+		// 1: Definizioni comuni
+		.modal-header {
+			padding: 15px 15px 0;
+			background: @sys_foreColor1;
+			color: #eee;
+			border-bottom: 1px solid #ccc;
+			border-radius: @modalRadius @modalRadius 0 0;
+			h1 {
+				font-size: 18px;
+				font-weight: bold;
+				padding: 0 0 15px;
+			}
+			.closeBox {
+				cursor: pointer;
+				font-size: 24px;
+				background: none;
+				color: inherit;
+				border: none;
+				margin: -2px 0 0;
+				padding: 0 0px;
+				outline: none;
+
+				&:hover, &:focus, &:active {
+					color: lighten(@sys_foreColor1, 20%)!important;
+				}
+			}
+		}
+	
+		.modal-body {
+			padding-left: 40px;
+			.icon {font-size: 70px;}
+
+			h2 { 
+				margin: 20px 0 0;
+				font-size: 22px;
+				font-weight: bold;
+			}
+			h3 { 
+				color: #666;
+				margin: 10px 0 0;
+				font-size: 16px; 
+				//font-weight: bold;
+			}
+			#optionBtns {
+				margin: 10px 0 0;
+				.option {
+					width: 90%;
+					font-weight: bold;
+					border-radius: 0;
+					margin: 4px 0px 0 4px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.modal-footer {
+			background: #e8e8e8;
+			border-top: 1px solid #ddd;
+			border-radius: 0 0 @modalRadius @modalRadius;
+			.closeBox {
+				cursor: pointer;
+			}
+		}
+
+		// 2: Definizioni per tipo finestra
+		.modal-ok {
+			.icon, h2 {
+				color: @sys_ok; 
+			}
+		}	
+		.modal-ko {
+			.icon, h2 {
+				color: @sys_error; 
+			}
+		}
+		.modal-choose, .modal-confirm {
+			.icon, h2 {
+				color: @sys_warning; 
+			}
+		
+		}
+		.modal-info {
+			.icon, h2 {
+				color: @sys_info; 
+			}
+		}
+	
+	}
+
+
+
+// >>> Pulsanti standard
+
+	.btn {
+		border-color : @black_20;
+		&.hover, &:hover {
+			color       : @sys_link;
+			background  : @black_05;
+		} 
+		&.active {
+			color       : @sys_link;
+			background  : mix(@sys_link, @black_10, 25%);
+		}
+	} 
+
+	// --
+	// [* Nota: i successivi stili, originariamente dichiarati all'interno di ".btn", sono stati elevati di livello per
+	//    poterli utilizzare anche con altri elementi (link o pseudolink) cui non è applicabile tale classe *]
+	// --
+	//.btnDefault {																						// Stile: "Default"
+	//	color       : @sys_link;
+	//	background  : @sys_mainBg;
+	//	&.hover, &:hover {
+	//		color       : @sys_link;
+	//		background  : @black_05;
+	//	} 
+	//	&.active {
+	//		color       : @sys_link;
+	//		background  : mix(@sys_link, @black_05, 5%);
+	//	}
+	//}
+	.btnStd {																						// Stile: "Default"
+		color       : @sys_foreColor1;
+		background  : @black_05;
+		&.hover, &:hover {
+			color       : @sys_mainBg;
+			background  : mix(@sys_foreColor1, @black_00, 65%);
+		} 
+		&.active {
+			color       : @sys_mainBg;
+			background  : @sys_foreColor1;
+		}
+	}
+	
+	.btnMain {																							// Stile: "Main"
+		color       : @sys_mainBg;
+		background  : @sys_link;
+		&.hover, &:hover {
+			color       : @sys_mainBg;
+			background  : @sys_linkHov;
+		} 
+		&.active {
+			color       : @sys_mainBg;
+			background  : mix(@sys_link, @black_25, 50%);
+		}
+	}
+
+	.btnLight {																							// Stile: "Light"
+		color       : @sys_linkHov;
+		background  : @black_20;
+		&.hover, &:hover {
+			color       : @sys_linkHov;
+			background  : @black_35;
+		}
+		&.active {
+			color       : @sys_linkHov;
+			background  : mix(@sys_link, @black_25, 10%);
+		}
+	}
+
+	.btnDark {																							// Stile: "Dark"
+		color       : @sys_mainBg;
+		background  : @black_75;
+		&.hover, &:hover {
+			color       : @sys_mainBg;
+			background  : @black_55;
+		}
+		&.active {
+			color       : @sys_mainBg;
+			background  : mix(@sys_link, @black_50, 15%);
+		}
+	}
+
+	.btnAction {																						// Stile: "Action"
+		color       : @sys_mainBg;
+		background  : @sys_action;
+		&.hover, &:hover {
+			color       : @sys_mainBg;
+			background  : @sys_actionHov;
+		}
+		&.active {
+			color       : @sys_mainBg;
+			background  : mix(@sys_action, @black_25, 50%);
+		}
+	}
+
+	.btnCaution {																						// Stile: "Caution"
+		color       : @sys_mainBg;
+		background  : @sys_caution;
+		&.hover, &:hover {
+			color       : @sys_mainBg;
+			background  : @sys_cautionHov;
+		}
+		&.active {
+			color       : @sys_mainBg;
+			background  : mix(@sys_caution, @black_20, 60%);
+		}
+	}
+
+
+
+// >>> Switcher (checkbox grafica)
+
+
+
+// >>> Card & Panel
+	.panel {
+
+		position: relative;
+		padding : 0 0 15px;;
+		border  : solid 1px @black_10;
+		.panel-title {
+			font-family: Oswald;
+			font-weight: 400;
+			font-size  : 20px;
+			line-height: 20px;
+			position   : absolute;
+			top        : -21px;
+			left       : 9px;
+			z-index    : 10;
+			background : @sys_mainBg;
+			padding    : 0px 5px;
+		}
+		.panel-toggle {
+			top   : -13px;
+			cursor: pointer;
+			.panel-ico-on  {
+				display: inline-block;
+			}
+			.panel-ico-off {
+				display: none; 
+				margin : 0 2px 0 3px;
+			}
+			&.collapsed {
+				.panel-ico-off {display: inline-block}
+				.panel-ico-on  {display: none}
+			}
+		//	label {
+		//		margin: 0;
+		//		//cursor: pointer;
+		//	}
+		}
+		.panel-content {
+			padding: 5px 0 0;
+	
+			& > .row {
+				margin: 0;
+			}
+		}
+	}
+	.card-body .row.no-panel {		// Patch per i "cassetti accordion" che possono avere o no il container "panel"  §§ Preso da PM: rivedere se serve
+		margin-top: -15px;
+	}
+

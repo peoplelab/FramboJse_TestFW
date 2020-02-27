@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<messages>
+<valid>
+<![CDATA[%]]>
+</valid>
+<errors>
+  <error>
+    <code>0</code>
+    <description>Operazione eseguita correttamente.</description>
+  </error>
+  <error>
+    <code>20</code>
+    <description>XML Nullo.</description>
+  </error>
+  <error>
+    <code>21</code>
+    <description>Errori di validazione xml.</description>
+  </error>
+  <error>
+    <code>30</code>
+    <description>Token NON VALIDO.</description>
+  </error>
+  <error>
+    <code>40</code>
+    <description>Il Business Plan non è stato creato.</description>
+  </error>
+  <error>
+    <code>50</code>
+    <description>La compilazione del Business Plan non è andata a buon fine.</description>
+  </error>
+  <error>
+    <code>51</code>
+    <description>Campo NON compilato.</description>
+  </error>
+  <error>
+    <code>52</code>
+    <description>La compilazione del Business Plan è andata a buon fine, ma ci sono errori nei dati calcolati.</description>
+  </error>
+
+  <error>
+    <code>60</code>
+    <description>Non è possibile inviare il business plan a Leanus in quanto non è stato compilato.</description>
+  </error>
+  <error>
+    <code>61</code>
+    <description>Si sono verificati errori durante l'invio del business plan a Leanus.</description>
+  </error>
+  <error>
+    <code>62</code>
+    <description>Si sono verificati errori durante la ricezione dei dati analitici da Leanus.</description>
+  </error>
+  <error>
+    <code>70</code>
+    <description>Si sono verificati errori durante l'accesso al file di configurazione dell'utente.</description>
+  </error>
+  <error>
+    <code>71</code>
+    <description>Si sono verificati errori durante l'accesso al file ricevuto da Leanus (probabilmente è necessario re-inviare i dati del business plan).</description>
+  </error>
+  <error>
+    <code>98</code>
+    <description>Per poter effettuare il salvataggio è necessario aver modificato almeno un dato.</description>
+  </error>
+  <error>
+    <code>99</code>
+    <description>Errore di scrittura/lettura sul database.</description>
+  </error>
+  <error>
+    <code>101</code>
+    <description>La tipologia azienda è obbligatoria.</description>
+  </error>
+  <error>
+    <code>102</code>
+    <description>La denominazione è obbligatoria.</description>
+  </error>
+  <error>
+    <code>103</code>
+    <description>La Partita Iva è obbligatoria.</description>
+  </error>
+  <error>
+    <code>104</code>
+    <description>Il nome del business plan è obbligatorio.</description>
+  </error>
+  <error>
+    <code>105</code>
+    <description>L'anno di inizio dei dati economici è obbligatorio.</description>
+  </error>
+  <error>
+    <code>106</code>
+    <description>La Partita Iva non è valida. Deve avere una lunghezza compresa tra 11 e 14 caratteri.</description>
+  </error>
+  <error>
+    <code>201</code>
+    <description>[b]I dati introdotti sono incompleti.[/b][br][br]Per eseguire la valutazione è necessario inserire tutte le voci.</description>
+  </error>
+</errors>
+<warnings>
+  <warning>
+    <code>1001</code>
+    <description>Valore netto acquisti esterni + (costi variabili commerciali e di produzione) > 35%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1002</code>
+    <description>Valore netto magazzino > 10%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1003</code>
+    <description>[cumulato] Valore netto acquisti esterni + (costi variabili commerciali e di produzione) > 35%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1004</code>
+    <description>[cumulato] Valore netto magazzino > 10%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1005</code>
+    <description>Costi interni netti > 50%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1006</code>
+    <description>[cumulato] Costi interni netti > 50%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1007</code>
+    <description>Totale annuale HR > 40%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1008</code>
+    <description>[cumulato] Totale annuale HR > 40%25 ricavi netti</description>
+  </warning>
+  <warning>
+    <code>1009</code>
+    <description>Capex materiali + immateriali	> 40%25 ricavi</description>
+  </warning>
+  <warning>
+    <code>1010</code>
+    <description>[cumulato] Capex materiali + immateriali	> 40%25 ricavi</description>
+  </warning>
+  <warning>
+    <code>1011</code>
+    <description>Capex finanziarie	> 10%25 utile netto (conto economico)</description>
+  </warning>
+  <warning>
+    <code>1012</code>
+    <description>[cumulato] Capex finanziarie	> 10%25 utile netto (conto economico)</description>
+  </warning>
+  <warning>
+    <code>1013</code>
+    <description>Finanziamento bancario (oneroso) > 50%25 totale impieghi (Fonti Finanziarie)</description>
+  </warning>
+  <warning>
+    <code>1014</code>
+    <description>[cumulato] Finanziamento bancario (oneroso) > 50%25 totale impieghi (Fonti Finanziarie)</description>
+  </warning>
+  <warning>
+    <code>1015</code>
+    <description>utili distribuiti	> 25%25 utile netto (Conto economico)</description>
+  </warning>
+  <warning>
+    <code>1016</code>
+    <description>[cumulato] utili distribuiti	> 25%25 utile netto (Conto economico)</description>
+  </warning>
+  <warning>
+    <code>1017</code>
+    <description>Tasso finanziamento bancario (oneroso) > 9%25</description>
+  </warning>
+  <warning>
+    <code>1018</code>
+    <description>EBITDA minore 5%25 ricavi</description>
+  </warning>
+  <warning>
+    <code>1019</code>
+    <description>Oneri finanziari (capex) / Ebitda > 0,3%25</description>
+  </warning>
+  <warning>
+    <code>1020</code>
+    <description>UTILE NETTO minore 1,5%25 ricavi</description>
+  </warning>
+  <warning>
+    <code>1021</code>
+    <description>Cash flow effettivo annuale inf. 5%25 ricavi oppure inf. 0</description>
+  </warning>
+  <warning>
+    <code>1022</code>
+    <description>Cash flow effettivo cumulato inf. 0</description>
+  </warning>
+  <warning>
+    <code>1023</code>
+    <description>Immobilizzazioni materiali + immateriali > 50%25 totale attività</description>
+  </warning>
+  <warning>
+    <code>1024</code>
+    <description>Patrimonio netto inferiore a 0</description>
+  </warning>
+  <warning>
+    <code>1025</code>
+    <description>totale crediti (attivo patrimoniale) > 25%25 ricavi</description>
+  </warning>
+  <warning>
+    <code>1026</code>
+    <description>Attivo totale - (passività + patrimonio netto) diverso da 0</description>
+  </warning>
+  <warning>
+    <code>1027</code>
+    <description>Fonti totali - Impieghi totali (differenza tra fonti e impieghi) inferiore a 0</description>
+  </warning>
+  <warning>
+    <code>1028</code>
+    <description>Rapporto fabbisogni fonti superiore a 100 sia per l'annuale che per il cumulato</description>
+  </warning>
+</warnings>
+</messages>

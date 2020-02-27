@@ -1,0 +1,51 @@
+.card.card-info .card-title-settings a {
+  /*color     : #fff;
+			display   : block;
+			text-align: left;
+			font-size : 20px;
+			text-transform: uppercase;*/
+}
+.card.card-info .card-title-settings a .ico {
+  float: right;
+  margin-left: 10px;
+}
+.card.card-info .card-title-settings a[aria-expanded=true] .ico-open {
+  display: inline-block;
+}
+.card.card-info .card-title-settings a[aria-expanded=true] .ico-close {
+  display: none;
+}
+.card.card-info .card-title-settings a[aria-expanded=false] .ico-open {
+  display: none;
+}
+.card.card-info .card-title-settings a[aria-expanded=false] .ico-close {
+  display: inline-block;
+}
+.card.card-info .card-body {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+}
+.card.card-info .card.best ul span,
+.card.card-info .card.worst ul span {
+  float: right;
+}
+.card.card-info .card.best ul.old label,
+.card.card-info .card.worst ul.old label {
+  color: #999;
+}
+.card.card-info .locked {
+  font-style: italic;
+}
+.card.card-info .locked.card-title-economics {
+  background: #1775b1;
+}
+.card.card-info .locked.collapse {
+  background: #f4f4f4;
+}
+#NoPIVA {
+  position: relative;
+  top: -1px;
+}
+.piva-question {
+  display: inline-flex;
+}

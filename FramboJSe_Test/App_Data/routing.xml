@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+	<route>
+		<name>masterpage_home</name>
+		<virtual>home/{resource}</virtual>
+		<!--<physical>~/reserved/aspx/home.aspx</physical>-->
+		<physical>~/private/aspx/master.home.pvt.aspx</physical>
+	</route>
+
+	<route>
+		<name>demo</name>
+		<virtual>demo/{resource}</virtual>
+		<physical>~/private/aspx/demo.aspx</physical>
+	</route>
+		<route>
+		<name>login</name>
+		<virtual>login/{resource}</virtual>
+		<physical>~/private/aspx/login.aspx</physical>
+	</route>
+
+	<route>
+		<name>demobis</name>
+		<virtual>demo-bis/{resource}</virtual>
+		<physical>~/private/aspx/master.demo.pvt.aspx</physical>
+	</route>
+
+	<!-- Add here others routes -->
+	<route></route>
+</routes>

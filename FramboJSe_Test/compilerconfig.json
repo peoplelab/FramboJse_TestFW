@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "system/3rd-parties/bootstrap/js/bootstrap.bundle.min.es5.js",
+    "inputFile": "system/3rd-parties/bootstrap/js/bootstrap.bundle.min.js"
+  },
+  {
+    "outputFile": "system/resources/css/structural.sys.css",
+    "inputFile": "system/resources/css/structural.sys.less"
+  }
+]

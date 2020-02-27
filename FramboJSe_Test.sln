@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FramboJSe_Test", "FramboJSe_Test\FramboJSe_Test.csproj", "{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A192C459-ED1B-4F93-8EF1-7A1A098BD69E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		LessCompiler = a192c459-ed1b-4f93-8ef1-7a1a098bd69e
+		SolutionGuid = {4B15B727-B267-45D6-BF6E-D72CFF6A4FAC}
+	EndGlobalSection
+EndGlobal

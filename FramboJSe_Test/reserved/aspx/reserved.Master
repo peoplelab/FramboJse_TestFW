@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="reserved.master.cs" Inherits="FramboJSe_Test.reserved.aspx.reserved" %>
+
+<!DOCTYPE html>
+
+<html>
+
+	<head runat="server">
+	
+	<title>FramboJSe_Test - Reserved </title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- ** 3d Partes ** -->
+	<!-- Js: kernel -->
+	<script type="text/javascript" src="/System/3rd-parties/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/System/3rd-parties/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/jscookie/js.cookie.js"></script>
+	<script type="text/javascript" src="/System/3rd-parties/fontawesome/js/fontawesome-all.min.js"></script>
+	
+	<!-- Js: settings -->
+	<script type="text/javascript">
+		var __PageScope      = 'reserved';																// Declare page scope (Public or Private)
+		var __SYS_namespaces = ['system', 'reserved']
+	</script>
+	<script type="text/javascript" src="/System/3rd-parties/system/system.js"></script>
+	
+
+
+
+
+
+
+
+	<!-- *** Questo dovrebbe essere automatizzato!! Dichiaro sopra quali namespaces caricare, e qui lo faccio *** -->
+<!--
+	<script type="text/javascript" src="/public/config.pub.js"></script>
+	<script type="text/javascript" src="/reserved/config.rsv.js"></script>
+	<script type="text/javascript" src="/System/config.sys.js"></script>
+	<script type="text/javascript" src="/System/namespaces.sys.js"></script>
+-->
+
+
+
+
+
+
+
+	<!-- Css -->
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/System/3rd-parties/fontawesome/css/fa-svg-with-js.css">
+
+	<!-- ** System ** -->
+	<!-- Js -->
+	<script type="text/javascript" src="/System/FramboJSe_Test.fw/libs/js/main.sys.js"></script>
+	<!-- Css -->
+
+	<!-- ** Application ** -->
+	<link rel="icon" href="/Public/resources/images/favicon.ico?v=2" />
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/overrides.css" />
+	<%--<link rel="stylesheet" type="text/css" href="/reserved/resources/css/costanti.css" />--%>
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/tipografici.css" />
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/strutturali.css" />
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/graphics.css" />
+	<link rel="stylesheet" type="text/css" href="/reserved/resources/css/fromYeap.css" />
+	<%--
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/strutturali.css" />
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/widgets.css" />
+	--%>
+
+	<asp:ContentPlaceHolder ID="cph_head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+	<form id="form1" runat="server">
+
+		<div id="breakLabelsContainer" class="hide">
+			<span class="viewportStatus d-inline-block d-sm-none">Minimal</span>
+			<span class="viewportStatus d-none d-sm-inline-block d-md-none">Small</span>
+			<span class="viewportStatus d-none d-md-inline-block d-lg-none">Medium</span>
+			<span class="viewportStatus d-none d-lg-inline-block d-xl-none">Large</span>
+			<span class="viewportStatus d-none d-xl-inline-block">Extralarge</span>
+			<span id="xSize"></span>
+		</div>
+
+		<%-- 1: Navbar --%>
+		<div id="navbarContainer"></div>
+
+
+		<%-- 2: section "Sitemap" --%>
+		<asp:ContentPlaceHolder ID="cph_sitemap" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 3: section "pageDashboard" --%>
+		<asp:ContentPlaceHolder ID="cph_dashboard" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 4: section "pageContent" --%>
+		<asp:ContentPlaceHolder ID="cph_pageBody" runat="server"></asp:ContentPlaceHolder>
+
+		<%-- 5: section "modalsContainer" --%>
+		<section id="modalsContainer"></section>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+		<div id="preloader" class="xhide">
+			<i class="outer spin"></i>
+			<i class="middle spin-reverse"></i>
+			<i class="inner spin"></i>
+		</div>
+
+		<div id="footer" class="navbar">
+			<div class="container">
+			</div>
+		</div>
+
+    </form>
+
+</body>
+</html>

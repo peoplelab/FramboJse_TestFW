@@ -1,0 +1,64 @@
+﻿//----------------------------------------------------------------------------------------
+// File: costanti.sys.less
+//
+// Desc: Definizione delle costanti globali (system) dei fogli di stile
+// Path: /system/resources/css
+//----------------------------------------------------------------------------------------
+
+
+// >>> Breakpoints Bootstrap [ Es.: @media (min-width: @bp-sm){...} ]:
+
+	@bp-sm:  576px;																						// Breakpoint: min <-> sm
+	@bp-md:  768px;																						// Breakpoint:  sm <-> md
+	@bp-lg:  992px;																						// Breakpoint:  md <-> lg
+	@bp-xl: 1200px;																						// Breakpoint:  lg <-> xl
+
+
+// >>> Dichiarazione colori: palette di sistema:
+	@black         : #000;
+	@white         : #fff;
+	@sys_mainColor : #666;																				// Colore testo principale (attribuito a "body" e ovunque non intervenga la palette)
+	@sys_mainBg    : #fff;																				// Colore sfondo principale (attribuito ai "mixin" e dove non interviene la palette)
+	@sys_link      : #08c;																				// Colore di default dei link
+	@sys_linkHov   : darken(@sys_link, 10%);															// Colore di hover dei link
+	@sys_action    : #fcc245;																			// Colore dei link (button) "action"
+	@sys_actionHov : darken(@sys_action, 15%);															// Colore di hover dei link "action"
+	@sys_caution   : #a2231d;																			// Colore dei link (button) "caution"
+	@sys_cautionHov: darken(@sys_caution, 10%);															// Colore di hover dei link "caution"
+
+	@sys_foreColor1: #395063;																			// "Fore color" 1: sfondi e testi "scuri" (ex main_blue)
+	@sys_foreColor2: #ffa500;																			// "Fore color" 2: secondo colore "scuro" (ex main_orange)
+	@sys_backColor1: #ffffff;																			// "Back color" 1: sfondi e testi "chiari"
+	@sys_backColor2: #c0c0c0;																			// "Back color" 2: secondo colore "chiaro"
+
+	@sys_error     : #ff0000;																			// Stato > error   : colore primo piano
+	@sys_info      : #17a2b8;																			// Stato > info    : colore primo piano
+	@sys_ok        : #009900;																			// Stato > ok      : colore primo piano
+	@sys_warning   : #f9b900;																			// Stato > warning : colore primo piano
+	@sys_errorBg   : mix( @sys_mainBg, @sys_error,   75%);												// Stato > error   : colore sfondo
+	@sys_infoBg    : mix( @sys_mainBg, @sys_info,    75%);												// Stato > info    : colore sfondo
+	@sys_okBg      : mix( @sys_mainBg, @sys_ok,      75%);												// Stato > ok      : colore sfondo
+	@sys_warningBg : mix( @sys_mainBg, @sys_warning, 75%);												// Stato > warning : colore sfondo
+
+	@black_00 :mix(#000, #fff,   0%);																	// Gradazioni di grigio da 00 (bianco) a 100 (nero)
+	@black_05 :mix(#000, #fff,   5%);
+	@black_10 :mix(#000, #fff,  10%);
+	@black_15 :mix(#000, #fff,  15%);
+	@black_20 :mix(#000, #fff,  20%);
+	@black_25 :mix(#000, #fff,  25%);
+	@black_30 :mix(#000, #fff,  30%);
+	@black_35 :mix(#000, #fff,  35%);
+	@black_40 :mix(#000, #fff,  40%);
+	@black_45 :mix(#000, #fff,  45%);
+	@black_50 :mix(#000, #fff,  50%);
+	@black_55 :mix(#000, #fff,  55%);
+	@black_60 :mix(#000, #fff,  60%);
+	@black_65 :mix(#000, #fff,  65%);
+	@black_70 :mix(#000, #fff,  70%);
+	@black_75 :mix(#000, #fff,  75%);
+	@black_80 :mix(#000, #fff,  80%);
+	@black_85 :mix(#000, #fff,  85%);
+	@black_90 :mix(#000, #fff,  90%);
+	@black_95 :mix(#000, #fff,	95%);
+	@black_100:mix(#000, #fff, 100%);
+

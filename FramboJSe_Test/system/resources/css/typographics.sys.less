@@ -1,0 +1,278 @@
+﻿//----------------------------------------------------------------------------------------
+// File: typographics.sys.less
+//
+// Desc: Definizione degli stili tipografici globali del framework
+// Path: /system/resources/css
+//----------------------------------------------------------------------------------------
+// Content:
+//	- Font families
+//	- Impostazione default e stili base
+//	- Proprietà "display"
+//	- Palette standard
+// Mixin:
+//	- Generazione classi "padding", "margin"
+//	- Generazione classi "font-size" in percentuale
+//	- Generazione classi "width" in percentuale
+//----------------------------------------------------------------------------------------
+
+
+
+@import "./costants.sys.less";
+
+
+// >>> Font families
+// >>> [* NOTA: Ci sono centinaia di font disponibili su https://fonts.googleapis.com *]
+
+	@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+	.Lato    {font-family: Lato;}
+	.Lato100 {font-family: Lato; font-weight: 100;}
+	.Lato300 {font-family: Lato; font-weight: 300;}
+	.Lato400 {font-family: Lato; font-weight: 400;}
+	.Lato700 {font-family: Lato; font-weight: 700;}
+	.Lato900 {font-family: Lato; font-weight: 900;}
+
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+	.OpenSans    {font-family: Open Sans;}
+	.OpenSans300 {font-family: Open Sans; font-weight: 300;}
+	.OpenSans400 {font-family: Open Sans; font-weight: 400;}
+	.OpenSans600 {font-family: Open Sans; font-weight: 600;}
+	.OpenSans700 {font-family: Open Sans; font-weight: 700;}
+	.OpenSans800 {font-family: Open Sans; font-weight: 800;}
+
+	@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700);
+	.Oswald    {font-family: Oswald;}
+	.Oswald200 {font-family: Oswald; font-weight: 200;}
+	.Oswald300 {font-family: Oswald; font-weight: 300;}
+	.Oswald400 {font-family: Oswald; font-weight: 400;}
+	.Oswald500 {font-family: Oswald; font-weight: 500;}
+	.Oswald600 {font-family: Oswald; font-weight: 600;}
+	.Oswald700 {font-family: Oswald; font-weight: 700;}
+
+	@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900);
+	.Raleway    {font-family: Raleway;}
+	.Raleway100 {font-family: Raleway; font-weight: 100;}
+	.Raleway200 {font-family: Raleway; font-weight: 200;}
+	.Raleway300 {font-family: Raleway; font-weight: 300;}
+	.Raleway400 {font-family: Raleway; font-weight: 400;}
+	.Raleway500 {font-family: Raleway; font-weight: 500;}
+	.Raleway600 {font-family: Raleway; font-weight: 600;}
+	.Raleway700 {font-family: Raleway; font-weight: 700;}
+	.Raleway800 {font-family: Raleway; font-weight: 800;}
+	.Raleway900 {font-family: Raleway; font-weight: 900;}
+
+	@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900);
+	.Montserrat    {font-family: Montserrat;}
+	.Montserrat100 {font-family: Montserrat; font-weight: 100;}
+	.Montserrat200 {font-family: Montserrat; font-weight: 200;}
+	.Montserrat300 {font-family: Montserrat; font-weight: 300;}
+	.Montserrat400 {font-family: Montserrat; font-weight: 400;}
+	.Montserrat500 {font-family: Montserrat; font-weight: 500;}
+	.Montserrat600 {font-family: Montserrat; font-weight: 600;}
+	.Montserrat700 {font-family: Montserrat; font-weight: 700;}
+	.Montserrat800 {font-family: Montserrat; font-weight: 800;}
+	.Montserrat900 {font-family: Montserrat; font-weight: 900;}
+
+	@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
+	.RobotoCondensed    {font-family: Roboto Condensed}
+	.RobotoCondensed300 {font-family: Montserrat; font-weight: 300;}
+	.RobotoCondensed400 {font-family: Montserrat; font-weight: 400;}
+	.RobotoCondensed700 {font-family: Montserrat; font-weight: 700;}
+
+
+
+// >>> Impostazione default e stili base:
+
+	// Margin e padding
+	hr, p { 
+		margin : 0px;
+		padding: 0px;
+	}
+	h1, h2, h3, h4, h5, h6, h7 {
+		margin     : 0px;
+		padding    : 0px;
+		font-family: Oswald;
+	}
+	ul, li {
+		margin         : 0px;
+		padding        : 0px;
+		list-style-type: none;
+	}
+
+	// Visibilità (Nota: esistono classi equivalenti in Bootstrap, es. "d-none")
+	.hide, .hidden {display: none; }
+	.inline        {display: inline;}
+	.block         {display: block;}
+	.inline-block  {display: inline-block;}
+
+	// Opacità
+	.opacity_00  {opacity:  0}
+	.opacity_10  {opacity: .1}
+	.opacity_20  {opacity: .2}
+	.opacity_30  {opacity: .3}
+	.opacity_40  {opacity: .4}
+	.opacity_50  {opacity: .5}
+	.opacity_60  {opacity: .6}
+	.opacity_70  {opacity: .7}
+	.opacity_80  {opacity: .8}
+	.opacity_90  {opacity: .9}
+	.opacity_100 {opacity:  1}
+
+	// Allineamenti 
+	.text-left  , .textLeft  , .text-align-left   {text-align: left;}
+	.text-right , .textRight , .text-align-right  {text-align: right;}
+	.text-center, .textCenter, .text-align-center {text-align: center;}
+
+	// Elementi float:
+	.floatLeft , .float-left  {float: left;}
+	.floatRight, .float-right {float: right;}
+
+	// Stili testo
+	.bold      {font-weight: bold}
+	.underline {text-decoration: underline}
+	.italic    {font-style: italic;}
+	.smallCaps {font-variant: small-caps;}
+	
+
+
+// >>> Palette standard
+	// Gradazioni di grigio: le due palette "Black" e "White" contengono gli stessi colori indicati con valori complementari [es. Nero x% = Bianco (100 -x)% ]
+	// La doppia palette risulta utile consentendo di utilizzare con più semplicità il sistema di riferimento preferito.
+	// Ad esempio: è più facile pensare "quasi bianco" con ".fcWhite_90" che con ".fcBlack_10", pur essendo lo stesso grigio.
+
+	.black_00  {color: @black_00 ;}				.white_100 {color: @black_00 ;}							// Colore di primo piano (fc: fore color)
+	.black_05  {color: @black_05 ;}				.white_95  {color: @black_05 ;}
+	.black_10  {color: @black_10 ;}				.white_90  {color: @black_10 ;}
+	.black_15  {color: @black_15 ;}				.white_85  {color: @black_15 ;}
+	.black_20  {color: @black_20 ;}				.white_80  {color: @black_20 ;}
+	.black_25  {color: @black_25 ;}				.white_75  {color: @black_25 ;}
+	.black_30  {color: @black_30 ;}				.white_70  {color: @black_30 ;}
+	.black_35  {color: @black_35 ;}				.white_65  {color: @black_35 ;}
+	.black_40  {color: @black_40 ;}				.white_60  {color: @black_40 ;}
+	.black_45  {color: @black_45 ;}				.white_55  {color: @black_45 ;}
+	.black_50  {color: @black_50 ;}				.white_50  {color: @black_50 ;}
+	.black_55  {color: @black_55 ;}				.white_45  {color: @black_55 ;}
+	.black_60  {color: @black_60 ;}				.white_40  {color: @black_60 ;}
+	.black_65  {color: @black_65 ;}				.white_35  {color: @black_65 ;}
+	.black_70  {color: @black_70 ;}				.white_30  {color: @black_70 ;}
+	.black_75  {color: @black_75 ;}				.white_25  {color: @black_75 ;}
+	.black_80  {color: @black_80 ;}				.white_20  {color: @black_80 ;}
+	.black_85  {color: @black_85 ;}				.white_15  {color: @black_85 ;}
+	.black_90  {color: @black_90 ;}				.white_10  {color: @black_90 ;}
+	.black_95  {color: @black_95 ;}				.white_05  {color: @black_95 ;}
+	.black_100 {color: @black_100;}				.white_00  {color: @black_100;}
+
+	.bgBlack_00  {background: @black_00 ;}		.bgWhite_100 {background: @black_00 ;}					// Colore sfondo (bg: background)
+	.bgBlack_05  {background: @black_05 ;}		.bgWhite_95  {background: @black_05 ;}
+	.bgBlack_10  {background: @black_10 ;}		.bgWhite_90  {background: @black_10 ;}
+	.bgBlack_15  {background: @black_15 ;}		.bgWhite_85  {background: @black_15 ;}
+	.bgBlack_20  {background: @black_20 ;}		.bgWhite_80  {background: @black_20 ;}
+	.bgBlack_25  {background: @black_25 ;}		.bgWhite_75  {background: @black_25 ;}
+	.bgBlack_30  {background: @black_30 ;}		.bgWhite_70  {background: @black_30 ;}
+	.bgBlack_35  {background: @black_35 ;}		.bgWhite_65  {background: @black_35 ;}
+	.bgBlack_40  {background: @black_40 ;}		.bgWhite_60  {background: @black_40 ;}
+	.bgBlack_45  {background: @black_45 ;}		.bgWhite_55  {background: @black_45 ;}
+	.bgBlack_50  {background: @black_50 ;}		.bgWhite_50  {background: @black_50 ;}
+	.bgBlack_55  {background: @black_55 ;}		.bgWhite_45  {background: @black_55 ;}
+	.bgBlack_60  {background: @black_60 ;}		.bgWhite_40  {background: @black_60 ;}
+	.bgBlack_65  {background: @black_65 ;}		.bgWhite_35  {background: @black_65 ;}
+	.bgBlack_70  {background: @black_70 ;}		.bgWhite_30  {background: @black_70 ;}
+	.bgBlack_75  {background: @black_75 ;}		.bgWhite_25  {background: @black_75 ;}
+	.bgBlack_80  {background: @black_80 ;}		.bgWhite_20  {background: @black_80 ;}
+	.bgBlack_85  {background: @black_85 ;}		.bgWhite_15  {background: @black_85 ;}
+	.bgBlack_90  {background: @black_90 ;}		.bgWhite_10  {background: @black_90 ;}
+	.bgBlack_95  {background: @black_95 ;}		.bgWhite_05  {background: @black_95 ;}
+	.bgBlack_100 {background: @black_100;}		.bgWhite_00  {background: @black_100;}
+
+	.borderBlack_00  {border-color: @black_00 ;}		.borderWhite_100 {border-color: @black_00 ;}					// Colore sfondo (bg: background)
+	.borderBlack_05  {border-color: @black_05 ;}		.borderWhite_95  {border-color: @black_05 ;}
+	.borderBlack_10  {border-color: @black_10 ;}		.borderWhite_90  {border-color: @black_10 ;}
+	.borderBlack_15  {border-color: @black_15 ;}		.borderWhite_85  {border-color: @black_15 ;}
+	.borderBlack_20  {border-color: @black_20 ;}		.borderWhite_80  {border-color: @black_20 ;}
+	.borderBlack_25  {border-color: @black_25 ;}		.borderWhite_75  {border-color: @black_25 ;}
+	.borderBlack_30  {border-color: @black_30 ;}		.borderWhite_70  {border-color: @black_30 ;}
+	.borderBlack_35  {border-color: @black_35 ;}		.borderWhite_65  {border-color: @black_35 ;}
+	.borderBlack_40  {border-color: @black_40 ;}		.borderWhite_60  {border-color: @black_40 ;}
+	.borderBlack_45  {border-color: @black_45 ;}		.borderWhite_55  {border-color: @black_45 ;}
+	.borderBlack_50  {border-color: @black_50 ;}		.borderWhite_50  {border-color: @black_50 ;}
+	.borderBlack_55  {border-color: @black_55 ;}		.borderWhite_45  {border-color: @black_55 ;}
+	.borderBlack_60  {border-color: @black_60 ;}		.borderWhite_40  {border-color: @black_60 ;}
+	.borderBlack_65  {border-color: @black_65 ;}		.borderWhite_35  {border-color: @black_65 ;}
+	.borderBlack_70  {border-color: @black_70 ;}		.borderWhite_30  {border-color: @black_70 ;}
+	.borderBlack_75  {border-color: @black_75 ;}		.borderWhite_25  {border-color: @black_75 ;}
+	.borderBlack_80  {border-color: @black_80 ;}		.borderWhite_20  {border-color: @black_80 ;}
+	.borderBlack_85  {border-color: @black_85 ;}		.borderWhite_15  {border-color: @black_85 ;}
+	.borderBlack_90  {border-color: @black_90 ;}		.borderWhite_10  {border-color: @black_90 ;}
+	.borderBlack_95  {border-color: @black_95 ;}		.borderWhite_05  {border-color: @black_95 ;}
+	.borderBlack_100 {border-color: @black_100;}		.borderWhite_00  {border-color: @black_100;}
+
+
+
+// ---
+// ** MIXIN: generazione automatica stili calcolati **
+// ---
+
+// >>> Generazione classi "padding", "margin":
+	// Macro:
+	.generate-typographics(@attr, @from, @to, @step) when (@from =< @to) {
+
+		// Legenda composizione stili:
+		//	attr := margin, padding
+		//	side := l: left, r: right, t: top), b: bottom, h: horizontal, v: vertical, a: all sides
+		//	from := valore (pixel)
+		.@{attr}-t-@{from} {@{attr}-top   : ~"@{from}px" !important;}
+		.@{attr}-r-@{from} {@{attr}-right : ~"@{from}px" !important;}
+		.@{attr}-b-@{from} {@{attr}-bottom: ~"@{from}px" !important;}
+		.@{attr}-l-@{from} {@{attr}-left  : ~"@{from}px" !important;}
+		.@{attr}-v-@{from} {@{attr}-top   : ~"@{from}px" !important; @{attr}-bottom: ~"@{from}px" !important;}
+		.@{attr}-h-@{from} {@{attr}-left  : ~"@{from}px" !important; @{attr}-right : ~"@{from}px" !important;}
+		.@{attr}-a-@{from} {@{attr}       : ~"@{from}px" !important;}
+		.generate-typographics(@attr, (@from + @step), @to, @step);
+
+	}
+	// Esecuzione:
+	@gtStart: -50;																						// Valore iniziale (può essere negativo)
+	@gtEnd  : 100;																						// Valore finale
+	@gtStep :   5;																						// Incremento valori
+	.generate-typographics(padding, @gtStart, @gtEnd, @gtStep);											// Generazione stili "padding"
+	.generate-typographics(margin , @gtStart, @gtEnd, @gtStep);											// Generazione stili "margin"
+
+
+// >>> Generazione classi "font-size" in punti
+	// Macro:
+	.set-fontSize(@pct, @topLimit, @step) when (@pct =< @topLimit) {
+		.font-@{pct} {font-size: ~"@{pct}px";}
+		.set-fontSize((@pct + @step), @topLimit, @step)
+	}
+	// Esecuzione:
+	@fs1Start:  8;																						// Valore iniziale
+	@fs1End  : 50;																						// Valore finale
+	@fs1Step :  1;																						// Incremento valori
+	.set-fontSize(@fs1Start, @fs1End, @fs1Step);														// Generazione stili "font-size"
+
+
+// >>> Generazione classi "font-size" in percentuale
+	// Macro:
+	.set-fontSize-pct(@pct, @topLimit, @step) when (@pct =< @topLimit) {
+		.font-pct-@{pct} {font-size: ~"@{pct}%";}
+		.set-fontSize-pct((@pct + @step), @topLimit, @step)
+	}
+	// Esecuzione:
+	@fs2Start:  50;																						// Valore iniziale
+	@fs2End  : 200;																						// Valore finale
+	@fs2Step :  10;																						// Incremento valori
+	.set-fontSize-pct(@fs2Start, @fs2End, @fs2Step);													// Generazione stili "font-size"
+
+
+// >>> Generazione classi "width" in percentuale
+	// Macro:
+	.set-width-pct(@pct, @topLimit, @step) when (@pct =< @topLimit) {
+		.width-@{pct}	{width: ~"@{pct}%";}
+		.col-pct-@{pct} {width: ~"@{pct}%";}															// Usato attualmente solo per le colonne tabelle
+		.set-width-pct((@pct + @step), @topLimit, @step)
+	}
+	// Esecuzione:
+	@swStart:   5;																						// Valore iniziale
+	@swEnd  : 100;																						// Valore finale
+	@swStep :   1;																						// Incremento valori
+	.set-width-pct(@swStart, @swEnd, @swStep);															// Generazione stili "font-size"
+

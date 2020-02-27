@@ -1,0 +1,92 @@
+﻿//----------------------------------------------------------------------------------------
+// File: overrides.sys.less
+//
+// Desc: Definizione degli overrides degli stili di default di Bootstrap.
+// Path: /system/resources/css
+//----------------------------------------------------------------------------------------
+// Content:
+//	-  Variabili
+//	-  Definizioni generali
+//	-  Controlli: input, select, radiobutton
+//----------------------------------------------------------------------------------------
+
+
+
+@import "./costants.sys.less";
+
+
+// >>> Variabili
+
+	@defaultFontSize: 14px;
+
+
+
+// >>> Definizioni generali
+
+	body {
+		color      : @sys_mainColor;
+		background : @sys_backColor1;
+		font-family: "Lato", Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size  : @defaultFontSize;
+	}
+
+	a, a:hover {
+		text-decoration: none;
+
+		// Evidenzia i tag "anchor" non formati correttamente
+		&:not([href]):not([tabindex]):not([data-toggle]) {
+			background: linear-gradient(to bottom, @black_20, @black_05);
+			color     : inherit;
+			cursor    : help;
+		}
+
+	}
+
+	.btn {
+		white-space  : normal;
+		border-radius: 0;
+		font-size    : @defaultFontSize;
+		&:focus {
+			-webkit-box-shadow: none;
+			-moz-box-shadow   : none;
+			box-shadow        : none;
+		}
+	}
+
+	.breadcrumb, .card {
+		border-radius: 0;
+		border-width: 0;
+	}
+
+
+// >>> Controlli: input, select, radiobutton
+
+	.form-control {
+		font-size    : @defaultFontSize;
+		line-height  : @defaultFontSize + 3;
+		padding      : 5px 10px !important;
+		border-width : 1px;
+		border-radius: .75em;
+		border-color : lighten(@sys_foreColor1, 45%);
+		border-color : @black_20;
+
+		&:focus {
+			border-color: @sys_foreColor2;
+			border-color: @sys_link;
+			border-color: @black_40;
+			border-color: @sys_info;
+			outline     : 0;
+			-webkit-box-shadow: inset 0 2px 6px fade(@sys_info, 20%), 0 0 8px rgba(204,204,204,.7);
+			box-shadow        : inset 0 2px 6px fade(@sys_info, 20%), 0 0 8px rgba(204,204,204,.7);
+		}
+		&:not(.economics) {
+			height     : calc(@defaultFontSize * 2 + 10) !important;
+			padding    : 3px 10px;
+			line-height: @defaultFontSize;
+		}
+
+	}
+
+	.input-group-addon {
+		border-radius:0;
+	}
