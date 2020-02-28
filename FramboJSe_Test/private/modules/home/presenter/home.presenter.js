@@ -144,7 +144,7 @@ define([
 		$(_pageContainer).html(params.templateHtml);													// Fills the HTML's case with the precompiled HTML template
 		jQuery.noConflict();																			// Prevent jquery and bootstrap scripts conflicting because declared twice
 		console.log('cookierow: '+__WACookie);
-		$("#div_ContentAnswer").html(__WACookie.result.replace('&lt',' <').replace('&gt', '> &#10'));
+		$("#div_ContentAnswer").text(__WACookie.result);
 
 		
 

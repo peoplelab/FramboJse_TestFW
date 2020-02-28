@@ -106,50 +106,30 @@ define(['modals'], function (modals) {
 
 		$('#preloader').attr('style', 'display:block');						// Shows the "preloader" layer
 
-		//_savedAjaxOptions = {
-		//	type: "POST",
-		//	url: params.endpoint,
-		//	data: '{data : "' + params.body + '"}',
-		//	processData: params.processData,
-		//	contentType: "application/json; charset=utf-8",
-		//	dataType: "json",
-		//	success: function (response) {
-		//		onAjaxSuccess(params, response);
-		//	},
-		//	error: function (jqXHR, textStatus, errorThrown) {
-		//		onAjaxFailure(params, jqXHR, textStatus, errorThrown);
-		//	},
-		//	canRedirect: 1
-		//};
-		var _authorithazion;
-		var _data;
-		var _dataType;
-		if (params.endpoint.includes('login')) {
-			_authorithazion = 'BASIC QzFBMDNCMTAtN0Q1OS00MDdBLUE5M0UtQjcxQUIxN0FEOEMyOjE3N0UzMjk1LTA2NTYtNDMxNy1CQzkxLUREMjcxQTE5QUNGRg==';
-			_data = '{data : "' + params.body + '"}';
-			_dataType = 'json';
-		} else {
-			_authorithazion = 'BEARER ' + params.auth;
-			_data = 'data=' + params.body;
-			_dataType = 'text';
-		}
+		const authorization = (params.endpoint.includes('login')) ? 'BASIC QzFBMDNCMTAtN0Q1OS00MDdBLUE5M0UtQjcxQUIxN0FEOEMyOjE3N0UzMjk1LTA2NTYtNDMxNy1CQzkxLUREMjcxQTE5QUNGRg=='
+			: 'BEARER ' + params.auth;
+		const loginservice = (params.endpoint.includes('login')) ? null : '1';
 		_savedAjaxOptions = {
+			type: "POST",
 			url: params.endpoint,
+			data: '{data : "' + params.body + '"}',
+			processData: params.processData,
+			//contentType: "application/json; charset=utf-8",
+			contentType: "application/json",
 			headers: {
 
-				'Authorization': _authorithazion,
-				'Content-Type': 'application/x-www-form-urlencoded',
-				'loginservice': 1
+				'Authorization': authorization,
+				loginservice
 			},
-			method: 'POST',
-			dataType: _dataType,
-			data: _data,
+
+			dataType: "json",
 			success: function (response) {
 				onAjaxSuccess(params, response);
 			},
-			failure: function (response) {
-				console.log(response);
-			}
+			error: function (jqXHR, textStatus, errorThrown) {
+				onAjaxFailure(params, jqXHR, textStatus, errorThrown);
+			},
+			canRedirect: 1
 		};
 
 		var request = $.ajax(_savedAjaxOptions);
@@ -264,8 +244,7 @@ define(['modals'], function (modals) {
 				return params.onSuccess({
 					ResponseCode: responseCode,
 					ResponseMessage: responseMessage,
-					RawData: response
-					//RawData        : response.d 
+					RawData        : response.d 
 				});
 		}
 

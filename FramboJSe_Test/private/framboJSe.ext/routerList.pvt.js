@@ -54,7 +54,7 @@ define (function(){
 			sectors: [{
 				sectorName: 'homePage',											// Subset del modulo (come specificato dal parametro "Sector" della pagina .aspx chiamante)
 				modulePath: __homepage.modules,									// Path dei file dei moduli (files .js)
-				dashboard: 'configuration.dboard.presenter.js',					// Eventuale dashbord comune a tutte le pag. del modulo
+				dashboard: 'configuration.dboard.presenter.js'+__SYS_version,					// Eventuale dashbord comune a tutte le pag. del modulo
 				sectorPages: []													// Array delle definizioni delle pagine del modulo
 	
 			}]
@@ -67,7 +67,7 @@ define (function(){
 			sectors: [{
 				sectorName: 'loginPage',											// Subset del modulo (come specificato dal parametro "Sector" della pagina .aspx chiamante)
 				modulePath: __loginpage.modules,								// Path dei file dei moduli (files .js)
-				dashboard: 'configuration.dboard.presenter.js',					// Eventuale dashbord comune a tutte le pag. del modulo
+				dashboard: 'configuration.dboard.presenter.js'+__SYS_version,					// Eventuale dashbord comune a tutte le pag. del modulo
 				sectorPages: []													// Array delle definizioni delle pagine del modulo
 
 			}]
@@ -92,9 +92,9 @@ define (function(){
 					alias: ['index'],
 					data: {
 						pageID    : 'demo',
-						controller: 'demo.controller.js',
-						model     : 'demo.model.js',
-						presenter : 'demo.presenter.js',
+						controller: 'demo.controller.js'+__SYS_version,
+						model     : 'demo.model.js'+__SYS_version,
+						presenter : 'demo.presenter.js'+__SYS_version,
 						templateID: [101]
 					}
 				},
@@ -102,9 +102,9 @@ define (function(){
 					alias: ['index-bis'],
 					data: {
 						pageID    : 'demoBis',
-						controller: 'demo.controller.js',
-						model     : 'demo.model.js',
-						presenter : 'demo.presenter.js',
+						controller: 'demo.controller.js'+__SYS_version,
+						model     : 'demo.model.js'+__SYS_version,
+						presenter : 'demo.presenter.js'+__SYS_version,
 						templateID: [101]
 					}
 				}
@@ -121,18 +121,18 @@ define (function(){
 					alias: ['index'],
 					data: {
 						pageID    : 'homepage',
-						controller: 'home.controller.js',
-						model     : 'home.model.js',
-						presenter : 'home.presenter.js',
+						controller: 'home.controller.js'+__SYS_version,
+						model     : 'home.model.js'+__SYS_version,
+						presenter : 'home.presenter.js'+__SYS_version,
 						templateID: [201]
 					}
 				},{
 					alias: ['new_home'],
 					data: {
 						pageID    : 'new_home',
-						controller: 'home.controller.js',
-						model     : 'home.model.js',
-						presenter : 'home.presenter.js',
+						controller: 'home.controller.js'+__SYS_version,
+						model     : 'home.model.js'+__SYS_version,
+						presenter : 'home.presenter.js'+__SYS_version,
 						templateID: [205]
 					}
 				}
@@ -149,18 +149,18 @@ define (function(){
 					alias: ['login'],
 					data: {
 						pageID: 'loginpage',
-						controller: 'login.controller.js',
-						model: 'login.model.js',
-						presenter: 'login.presenter.js',
+						controller: 'login.controller.js'+__SYS_version,
+						model: 'login.model.js'+__SYS_version,
+						presenter: 'login.presenter.js'+__SYS_version,
 						templateID: [301]
 					}
 				},{
 					alias: ['new_home'],
 					data: {
 						pageID: 'new_home',
-						controller: 'login.controller.js',
-						model: 'login.model.js',
-						presenter: 'login.presenter.js',
+						controller: 'login.controller.js'+__SYS_version,
+						model: 'login.model.js'+__SYS_version,
+						presenter: 'login.presenter.js'+__SYS_version,
 						templateID: [305]
 					}
 				}

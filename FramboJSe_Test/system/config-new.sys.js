@@ -83,9 +83,9 @@
 
 
 			// ** Login management **
-			loginController   : _loginRoot + 'controller/login.controller.js',
-			loginModel        : _loginRoot + 'model/login.model.js',
-			loginPresenter    : _loginRoot + 'presenter/login.presenter.js',
+			loginController   : _loginRoot + 'controller/login.controller.js'+__SYS_version,
+			loginModel        : _loginRoot + 'model/login.model.js'+__SYS_version,
+			loginPresenter    : _loginRoot + 'presenter/login.presenter.js'+__SYS_version,
 
 
 			// ** Page management **

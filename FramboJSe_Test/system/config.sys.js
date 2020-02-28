@@ -26,70 +26,70 @@
 	__SYS_config = {
 		
 		baseURL: "/",
-		defaultExtensions: 'js',
+		defaultExtensions: 'js'+__SYS_version,
 		map: {
 
 			// ** 3rd-parties **
-			bootstrap         : _sys3rdParts + 'bootstrap/js/bootstrap.budle.min.js',
-			colorBox          : _sys3rdParts + 'colorbox/jquery.colorbox-min.js',
-			fontawesome       : _sys3rdParts + 'fontawesome/js/fontawesome-all.min.js',
-			jCropMin          : _sys3rdParts + 'jcrop/js/jquery.Jcrop.min.js',
-			jquery            : _sys3rdParts + 'jquery/jquery.min.js',
-			jquery_ui         : _sys3rdParts + 'jquery-ui/jquery-ui.min.js',
-			jsCookie          : _sys3rdParts + 'jscookie/js.cookie.js',
-			md5               : _sys3rdParts + 'md5/md5.js',
-			tSorterMin        : _sys3rdParts + 'tablesorter/jquery.tablesorter.min.js',
-			tSorterWidgets    : _sys3rdParts + 'tablesorter/jquery.tablesorter.widgets.min.js',
-			bs_datepicker     : _sys3rdParts + 'datepicker/bootstrap-datepicker.min.js',
-			bs_datepicker_it  : _sys3rdParts + 'datepicker/bootstrap-datepicker.it.min.js',
+			bootstrap         : _sys3rdParts + 'bootstrap/js/bootstrap.budle.min.js'+__SYS_version,
+			colorBox          : _sys3rdParts + 'colorbox/jquery.colorbox-min.js'+__SYS_version,
+			fontawesome       : _sys3rdParts + 'fontawesome/js/fontawesome-all.min.js'+__SYS_version,
+			jCropMin          : _sys3rdParts + 'jcrop/js/jquery.Jcrop.min.js'+__SYS_version,
+			jquery            : _sys3rdParts + 'jquery/jquery.min.js'+__SYS_version,
+			jquery_ui         : _sys3rdParts + 'jquery-ui/jquery-ui.min.js'+__SYS_version,
+			jsCookie          : _sys3rdParts + 'jscookie/js.cookie.js'+__SYS_version,
+			md5               : _sys3rdParts + 'md5/md5.js'+__SYS_version,
+			tSorterMin        : _sys3rdParts + 'tablesorter/jquery.tablesorter.min.js'+__SYS_version,
+			tSorterWidgets    : _sys3rdParts + 'tablesorter/jquery.tablesorter.widgets.min.js'+__SYS_version,
+			bs_datepicker     : _sys3rdParts + 'datepicker/bootstrap-datepicker.min.js'+__SYS_version,
+			bs_datepicker_it  : _sys3rdParts + 'datepicker/bootstrap-datepicker.it.min.js'+__SYS_version,
 				
 			// ** Framework **
 			// Base:
-			base_controller   : _sysFrameWork + 'controller/base.controller.js',
-			base_model        : _sysFrameWork + 'model/base.model.js',
-			base_presenter    : _sysFrameWork + 'presenter/base.presenter.js',
+			base_controller   : _sysFrameWork + 'controller/base.controller.js'+__SYS_version,
+			base_model        : _sysFrameWork + 'model/base.model.js'+__SYS_version,
+			base_presenter    : _sysFrameWork + 'presenter/base.presenter.js'+__SYS_version,
 			// Libs:
-			mainJs            : _sysFrameWork + 'libs/js/main.sys.js',
+			mainJs            : _sysFrameWork + 'libs/js/main.sys.js'+__SYS_version,
 			// Modals:
-			modals            : _sysFrameWork + 'presenter/modals.presenter.js',
+			modals            : _sysFrameWork + 'presenter/modals.presenter.js'+__SYS_version,
 			// Router:
-			router            : _sysFrameWork + 'controller/router.controller.js',
+			router            : _sysFrameWork + 'controller/router.controller.js'+__SYS_version,
 			// Sitemap:
-			sitemap           : _sysFrameWork + 'presenter/sitemap.presenter.js',
-			sitemap_ctrl      : _sysFrameWork + 'controller/sitemap.controller.js',
+			sitemap           : _sysFrameWork + 'presenter/sitemap.presenter.js'+__SYS_version,
+			sitemap_ctrl      : _sysFrameWork + 'controller/sitemap.controller.js'+__SYS_version,
 			// Snippets:
-			snippets          : _sysFrameWork + 'presenter/snippetsHandler.presenter.js',
-            dd_base           : _sysFrameWork + 'presenter/snippets/dd_base.js',
-            input_kernel      : _sysFrameWork + 'presenter/snippets/input_kernel.js',
-            input_text        : _sysFrameWork + 'presenter/snippets/input_text.js',
-            input_hidden      : _sysFrameWork + 'presenter/snippets/input_hidden.js',
-			snippetsList_sys  : _sysFrameWork + 'presenter/snippets/snippetsList.sys.js',
-			widgetsList_sys   : _sysFrameWork + 'presenter/widgets/widgetsList.sys.js',
+			snippets          : _sysFrameWork + 'presenter/snippetsHandler.presenter.js'+__SYS_version,
+            dd_base           : _sysFrameWork + 'presenter/snippets/dd_base.js'+__SYS_version,
+            input_kernel      : _sysFrameWork + 'presenter/snippets/input_kernel.js'+__SYS_version,
+            input_text        : _sysFrameWork + 'presenter/snippets/input_text.js'+__SYS_version,
+            input_hidden      : _sysFrameWork + 'presenter/snippets/input_hidden.js'+__SYS_version,
+			snippetsList_sys  : _sysFrameWork + 'presenter/snippets/snippetsList.sys.js'+__SYS_version,
+			widgetsList_sys   : _sysFrameWork + 'presenter/widgets/widgetsList.sys.js'+__SYS_version,
 			// default (empty file):
-			default			  : _sysFrameWork + '/presenter/default.presenter.js',
+			default			  : _sysFrameWork + '/presenter/default.presenter.js'+__SYS_version,
 			// Templates:
-			templatesHandler  : _sysFrameWork + 'presenter/templatesHandler.presenter.js',
-			templatesList_sys : _sysTemplates + 'templatesList.sys.js',
+			templatesHandler  : _sysFrameWork + 'presenter/templatesHandler.presenter.js'+__SYS_version,
+			templatesList_sys : _sysTemplates + 'templatesList.sys.js'+__SYS_version,
 
 
 			// ** Wrappers **
-			tableSorter       : _sysWrappers + 'wrapper.tablesorter.js',
-			jCrop             : _sysWrappers + 'wrapper.jcrop.js',
-			googleMaps        : _sysWrappers + 'wrapper.google_maps.js',
-			datepicker        : _sysWrappers + 'wrapper.datepicker.js',
+			tableSorter       : _sysWrappers + 'wrapper.tablesorter.js'+__SYS_version,
+			jCrop             : _sysWrappers + 'wrapper.jcrop.js'+__SYS_version,
+			googleMaps        : _sysWrappers + 'wrapper.google_maps.js'+__SYS_version,
+			datepicker        : _sysWrappers + 'wrapper.datepicker.js'+__SYS_version,
 
 
 			// ** Login management **
-			loginController   : _loginRoot + 'controller/login.controller.js',
-			loginModel        : _loginRoot + 'model/login.model.js',
-			loginPresenter    : _loginRoot + 'presenter/login.presenter.js',
+			loginController   : _loginRoot + 'controller/login.controller.js'+__SYS_version,
+			loginModel        : _loginRoot + 'model/login.model.js'+__SYS_version,
+			loginPresenter    : _loginRoot + 'presenter/login.presenter.js'+__SYS_version,
 
 
 			// ** Page management **
-			currentController : '',
-			currentModel      : '',
-			currentPresenter  : '',
-			currentDashboard  : '',
+			currentController : ''+__SYS_version,
+			currentModel      : ''+__SYS_version,
+			currentPresenter  : ''+__SYS_version,
+			currentDashboard  : ''+__SYS_version,
 		}
 	}
 

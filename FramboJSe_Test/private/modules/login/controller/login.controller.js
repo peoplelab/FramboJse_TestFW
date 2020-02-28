@@ -102,8 +102,11 @@ define([
 	//	}
 
 	function onSaveElement(result) {
+		if (result.ResponseCode == 0)
+			callTokenAuthService(result);
+		else
+			alert("Error:\n\r" + result.ResponseMessage);
 
-		callTokenAuthService(result);
 	}
 
 	function callTokenAuthService(result) {
