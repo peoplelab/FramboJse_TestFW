@@ -1,21 +1,21 @@
 //----------------------------------------------------------------------------------------
 // File: home.controller.js
 //
-// Desc: Controller della pagina "Home - Index"
-// Path: /Private/modules/home/controller
+// Desc: Controller della pagina "home"
+// Path: /Private/modules/login/controller
 //----------------------------------------------------------------------------------------
 
 define([
-    'base_controller',
-    'base_presenter',
-    'currentModel',
-    'currentPresenter'
+	'base_controller',
+	'base_presenter',
+	'currentModel',
+	'currentPresenter'
 ], function (cBase, pBase, model, presenter) {
 
-	var _onInit     = true;																				// Monitoring first time executing code...
-	var _pageID     = '';																				// Page ID (for presenter)
+	var _onInit = true;																				// Monitoring first time executing code...
+	var _pageID = '';																				// Page ID (for presenter)
 	var _templateID = '';																				// ID of the page template
-	var _initPars   = '';																				// Set dei parametri iniziali della Setup (usati per il re-setup dopo il save)
+	var _initPars = '';																				// Set dei parametri iniziali della Setup (usati per il re-setup dopo il save)
 
 	return {
 		init: setup
@@ -29,13 +29,13 @@ define([
 	//  none
 	function setup(params) {
 
-		_initPars   = params;																			// Set di parametri (pageParams) definito in "routerList"
-		_pageID     = (params == undefined) ? _pageID : params.pageID;
+		_initPars = params;																			// Set di parametri (pageParams) definito in "routerList"
+		_pageID = (params == undefined) ? _pageID : params.pageID;
 		_templateID = (params == undefined) ? _templateID : params.templateID;
 
 		// Step 1: Inizializzazione della UI (setup)
 		presenter.Init({
-			pageID    : _pageID,
+			pageID: _pageID,
 			templateID: _templateID
 		});
 
@@ -44,26 +44,26 @@ define([
 		//		Il popolamento della pagina dipende generalmente dall'esecuzione di un servizio (lettura dati da db o altro)
 		//		La funzione di render (RenderPage) viene quindi invocata dalla funzione "onSuccess" della chiamata al servizio, passando i dati ottenuti
 		// *]
-		// Esempio:
-		//
-		//return model.Common_Get({
-		//
-		//	page     : _pageID,
-		//	token    : __WACookie.Token,
-		//	onFailure: pBase.OnGenericFailure,
-		//	onSuccess: function(params) {
-		//		presenter.RenderPage({ 
-		//			RawData: params.RawData,
-		//			OnSave : saveData,
-		//			Compile: compile,
-		//			Reset  : reset,
-		//		});
-		//	},
-		//});
 
-		presenter.RenderPage({});
+		// Step 2: Interrogazione SAAS per il recupero dati
+		return model.wsGetSettings({
+
+			data: __WACookie.result,
+			onFailure: function (response) {
+				console.log();
+				location.href = "/public/login/login.html";
+			},
+			onSuccess: function (response) {
+				if (response.ResponseCode == 0) {
+					presenter.RenderPage({
+						wsGetSettings: response.RawData
+					});
+				} else {
+					location.href = "/public/login/login.html";
+				}
+			}
+		});
 	}
-
 
 	// *** Sezione HANDLERS: 
 	// ***	definizione delle funzioni di controllo (specifiche della sezione) 
@@ -77,18 +77,4 @@ define([
 	//	//  none
 	//	// RETURN:
 	//	//  none
-	//	function saveData() {
-	//	
-	//		var rawdata = presenter.GetData4Saving();
-	//	
-	//		return model.Common_Set({											// Builds XML data and sends them to the Saas...
-	//			data     : rawdata,
-	//			page     : _pageID,
-	//			token    : __WACookie.Token,
-	//			onSuccess: onSaveElement,
-	//			onFailure: onSaveElement
-	//		});
-	//	
-	//	}
-
 });

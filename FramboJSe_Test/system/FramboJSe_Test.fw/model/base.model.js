@@ -114,7 +114,6 @@ define(['modals'], function (modals) {
 			url: params.endpoint,
 			data: '{data : "' + params.body + '"}',
 			processData: params.processData,
-			//contentType: "application/json; charset=utf-8",
 			contentType: "application/json",
 			headers: {
 

@@ -1,8 +1,8 @@
-//----------------------------------------------------------------------------------------
-// File: home.presenter.js
+﻿//----------------------------------------------------------------------------------------
+// File: login.presenter.js
 //
-// Desc: Presenter della pagina "Home - Index"
-// Path: /Private/modules/home/presenter
+// Desc: Presenter della pagina "login"
+// Path: /public/modules/login/presenter
 //----------------------------------------------------------------------------------------
 
 define([
@@ -14,9 +14,9 @@ define([
 ], function (pBase, th, snippets, modals, dashboard) {
 
 	// ** Module management **
-	var _module = {};																				// Mapping of the current module
-	var _resources = {};																					// Mapping of the additional resources (.css and/or .js files)
-	var _wsGetSettings;
+	var _module = {};																					// Mapping of the current module
+	var _resources = {}																					// Mapping of the additional resources (.css and/or .js files)
+	var _pippolocale;
 	// ** Global variables **
 	var _xml = '';																					// XML data (to show)
 	var _pageID = '';																					// Sitemap/page ID
@@ -82,7 +82,7 @@ define([
 
 		_module.fn = pBase.fnName(arguments);															// Traces the current function
 		_xml = $.parseXML(params.RawData);														// Transforms raw XML data into an XML document
-		_wsGetSettings = params.wsGetSettings;
+		_pippolocale=params.pippo;
 		th.Render({
 			code: _templateID[0],
 			XML: _xml,
@@ -111,7 +111,8 @@ define([
 			onSuccess: function (result) {
 				render_template_page({																	// Carica il template nel DOM
 					templateHtml: result,
-					wsGetSettings: _wsGetSettings,
+					pippo:_pippolocale
+//dafaresulclick:_pippolocale
 				});
 				render_template_values({																// Costruisce il contenuto del template
 				});
@@ -144,19 +145,21 @@ define([
 
 		$(_pageContainer).html(params.templateHtml);													// Fills the HTML's case with the precompiled HTML template
 		jQuery.noConflict();																			// Prevent jquery and bootstrap scripts conflicting because declared twice
-		$("#div_ContentAnswer").text(params.wsGetSettings);
 
+		$('#cammelloLogin').click(function() {
+ _pippolocale({Username:$('#username').val(),Password:$('#password').val()})
+});
+		// ***
+		// *** Funzioni per elementi statici del DOM (es. handler eventi), da questo momento esistenti 
+		// ***
+		//
+		// Esempio:
+		//	$('#btn-generic').click(function(e) {
+		//	
+		//		e.preventDefault();
+		//		//... Do something with $(this)
+		//	});
 
-
-	}
-	function objectIsEmpty(object) {
-		if (Object.keys(object.result).length === 0 && object.result.constructor === Object) {
-			console.log(" " + object + " is empty!");
-			return false;
-		} else {
-			console.log(" " + object + " is not empty !");
-			return true;
-		}
 	}
 
 
