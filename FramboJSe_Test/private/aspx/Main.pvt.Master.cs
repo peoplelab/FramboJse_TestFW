@@ -18,7 +18,7 @@ namespace FramboJSe_Test.MasterPages {
 		
 		public string[] Lib_js  = new string[] {
 			"/System/3rd-parties/jquery/jquery.min.js", 
-			"/System/3rd-parties/jquery-ui/js/jquery-ui.min.js", 
+			"/System/3rd-parties/jquery-ui/jquery-ui.min.js", 
 			"/System/3rd-parties/bootstrap/js/bootstrap.bundle.min.js", 
 			"/System/3rd-parties/jscookie/js.cookie.js", 
 			"/System/3rd-parties/fontawesome/js/fontawesome-all.min.js", 
