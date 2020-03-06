@@ -112,28 +112,57 @@ define (function(){
 		}
 		addRoutes(pageDefinitions);
 
+		//// ** hybrid page **
+		//pageDefinitions = {
+		//	title: 'hybridpage',													// Not used (reference only)
+		//	owner: { module: 'hybrid', sector: 'hybridPage' },
+		//	pages: [
+		//		{
+		//			alias: ['index'],
+		//			data: {
+		//				pageID: 'hybridpage',
+		//				controller: 'hybrid.controller.js' + __SYS_version,
+		//				model: 'hybrid.model.js' + __SYS_version,
+		//				presenter: 'hybrid.presenter.js' + __SYS_version,
+		//				templateID: [105]
+		//			}
+		//		}
+		//	]
+		//}
+		//addRoutes(pageDefinitions);
+
 		// ** Home page **
 		pageDefinitions = {
 			title: 'homepage',													// Not used (reference only)
-			owner: {module: 'home', sector: 'homePage'},
+			owner: { module: 'home', sector: 'homePage' },
 			pages: [
 				{
 					alias: ['index'],
 					data: {
-						pageID    : 'homepage',
-						controller: 'home.controller.js'+__SYS_version,
-						model     : 'home.model.js'+__SYS_version,
-						presenter : 'home.presenter.js'+__SYS_version,
+						pageID: 'homepage',
+						controller: 'home.controller.js' + __SYS_version,
+						model: 'home.model.js' + __SYS_version,
+						presenter: 'home.presenter.js' + __SYS_version,
 						templateID: [201]
 					}
-				},{
+				}, {
 					alias: ['new_home'],
 					data: {
-						pageID    : 'new_home',
-						controller: 'home.controller.js'+__SYS_version,
-						model     : 'home.model.js'+__SYS_version,
-						presenter : 'home.presenter.js'+__SYS_version,
+						pageID: 'new_home',
+						controller: 'home.controller.js' + __SYS_version,
+						model: 'home.model.js' + __SYS_version,
+						presenter: 'home.presenter.js' + __SYS_version,
 						templateID: [205]
+					}
+				},
+				{
+					alias: ['hybridpage'],
+					data: {
+						pageID: 'hybridpage',
+						controller: 'hybridhome.controller.js' + __SYS_version,
+						model: 'hybridhome.model.js' + __SYS_version,
+						presenter: 'hybridhome.presenter.js' + __SYS_version,
+						templateID: [105]
 					}
 				}
 			]

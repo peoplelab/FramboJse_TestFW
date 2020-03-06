@@ -26,6 +26,8 @@ define (function () {
 
 			// Section "Demo page" (group id: 100)
 			101: __demopage.templates + 'index.html',
+			// Section "Demo react page" (group id: 100)
+			105: __homepage.templates + 'hybridhome.html',
 
 			// Section "Home page" (group id: 100)
 			201: __homepage.templates + 'home.html',

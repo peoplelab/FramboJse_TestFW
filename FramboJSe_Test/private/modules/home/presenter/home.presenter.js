@@ -188,6 +188,14 @@ define([
 			}
 		});
 
+		$("#reactButton").click(function (event) {
+			event.preventDefault();
+			location.href = '/private/templates/react/reacthome.html';
+		});
+		$("#hybridButton").click(function (event) {
+			event.preventDefault();
+			location.href = '/home/hybridpage';
+		});
 
 		$('.ground').click(function () {
 			var c = $(this).css('background');
