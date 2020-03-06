@@ -46,22 +46,25 @@ define([
 		// *]
 
 		// Step 2: Interrogazione SAAS per il recupero dati
-		return model.wsGetSettings({
+		//return model.wsGetSettings({
 
-			data: __WACookie.result,
-			onFailure: function (response) {
-				console.log();
-				location.href = "/public/login/login.html";
-			},
-			onSuccess: function (response) {
-				if (response.ResponseCode == 0) {
-					presenter.RenderPage({
-						wsGetSettings: response.RawData
-					});
-				} else {
-					location.href = "/public/login/login.html";
-				}
-			}
+		//	data: __WACookie.result,
+		//	onFailure: function (response) {
+		//		console.log();
+		//		location.href = "/public/login/login.html";
+		//	},
+		//	onSuccess: function (response) {
+		//		if (response.ResponseCode == 0) {
+		//			presenter.RenderPage({
+		//				wsGetSettings: response.RawData
+		//			});
+		//		} else {
+		//			 location.href = "/public/login/login.html";
+		//		}
+		//	}
+		//});
+		presenter.RenderPage({
+			wsGetSettings: __WACookie.result
 		});
 	}
 

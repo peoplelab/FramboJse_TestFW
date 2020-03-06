@@ -18,9 +18,11 @@
 
 			$("#click_button").click(function () {
 				var username = $("#username").val();
-				var password = $("#password").val();
+                var password = $("#password").val();
 
-				var savedAjaxOptions = {
+                var data = "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<Response xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" ID=\"20200303082855863\">\r\n  <Result>\r\n    <Codice>0</Codice>\r\n    <Descrizione>xxxxxxxxxxx</Descrizione>\r\n  </Result>\r\n  <Data>\r\n    <AccessToken>ZnBz0Fk_3zfqy2phs3F-0eLNcwAx51N7Pn1Q-dqZtl1KiR-h9uD7gQ24xWAXDVQdlcYdGiI_U2wBlF-BcVz0IOxt6Urf4expta1_AS123XY9M-jJPVQAlcvS1LMUXwhsZTS8nRcHQO_89sgOMw5woSMNHOFGmKnkwVN78IcMT4XV-UMaaW6UkLWEsxn1M-FoHlPBq61MYF5x_fkJejWwFsfuzNe0nnZBpzyfB6bwCww0JXKtgNjIcSRWhnR3Ae8VR_lU1ktSPOwEWfB7B0Zm774HeoVqQhXdPcqqG-A4sFCuqhiBRUjrbqBNt7G2gTdeH7ioPwab4QiFbML6hStjrA</AccessToken>\r\n    <TokenType>bearer</TokenType>\r\n    <Expires>59</Expires>\r\n  </Data>\r\n</Response>";
+                var response = onAjaxSuccess(data);
+				/*var savedAjaxOptions = {
 					type: "POST",
 					url: "/api/login",
 					data: '{data : "<?xml version=\'1.0\' encoding=\'utf-8\' ?><Request ID=\'20200303082855863\'><General><Token>undefined</Token></General><Data><Username>' + username + '</Username><Password>' + password + '</Password></Data></Request>"}',
@@ -50,7 +52,7 @@
 					canRedirect: 1
 
 				};
-				$.ajax(savedAjaxOptions);
+				$.ajax(savedAjaxOptions);*/
 			});
 			function onAjaxResponse(response) {
 
