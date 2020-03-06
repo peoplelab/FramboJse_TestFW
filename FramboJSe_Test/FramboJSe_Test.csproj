@@ -80,6 +80,7 @@
     <Content Include="private\aspx\Main.pvt.settings.aspx" />
     <Content Include="private\aspx\master.demo.pvt.aspx" />
     <Content Include="private\aspx\master.home.pvt.aspx" />
+    <Content Include="private\bridge\hybrid\App.jsx" />
     <Content Include="private\config.pvt.js" />
     <Content Include="private\config-old.pvt.js" />
     <Content Include="private\framboJSe.ext\routerList.pvt.js" />
@@ -89,6 +90,9 @@
     <Content Include="private\modules\demo\controller\demo.controller.js" />
     <Content Include="private\modules\demo\model\demo.model.js" />
     <Content Include="private\modules\demo\presenter\demo.presenter.js" />
+    <Content Include="private\modules\home\controller\hybridhome.controller.js" />
+    <Content Include="private\modules\home\model\hybridhome.model.js" />
+    <Content Include="private\modules\home\presenter\hybridhome.presenter.js" />
     <Content Include="private\modules\login\controller\login.controller.js" />
     <Content Include="private\modules\login\model\login.model.js" />
     <Content Include="private\modules\login\presenter\login.presenter.js" />
@@ -152,8 +156,13 @@
     <Content Include="private\templates\demo\index.html" />
     <Content Include="private\templates\home\home.html" />
     <Content Include="private\templates\home\new_home.html" />
+    <Content Include="private\bridge\hybrid\ReactBridge.jsx" />
+    <Content Include="private\templates\home\hybridhome.html" />
     <Content Include="private\templates\login\login.html" />
     <Content Include="private\templates\login\new_home.html" />
+    <Content Include="react-apps\common\template-import.js" />
+    <Content Include="react-apps\DisplayCookie\DisplayCookieReact.jsx" />
+    <Content Include="private\templates\react\reacthome.html" />
     <Content Include="private\templates\templatesList.pvt.js" />
     <Content Include="public\config.pub.js" />
     <Content Include="public\FramboJSe_Test.ext\snippets\snippetsList.pub.js" />
@@ -206,6 +215,9 @@
     <Content Include="reserved\resources\images\favicon32.ico" />
     <Content Include="reserved\resources\images\favicon32.png" />
     <Content Include="reserved\resources\images\pmLogo.gif" />
+    <Content Include="system\3rd-parties\babel\babel.min.js" />
+    <Content Include="system\3rd-parties\babel\plugin-babel.js" />
+    <Content Include="system\3rd-parties\babel\systemjs-babel-browser.js" />
     <Content Include="system\3rd-parties\bootstrap\css\bootstrap.min.css" />
     <Content Include="system\3rd-parties\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="system\3rd-parties\colorbox\colorbox.css" />
@@ -238,6 +250,9 @@
     <Content Include="system\3rd-parties\jquery\jquery.min.js" />
     <Content Include="system\3rd-parties\jscookie\js.cookie.js" />
     <Content Include="system\3rd-parties\md5\md5.js" />
+    <Content Include="system\3rd-parties\react\react-dom.development.js" />
+    <Content Include="system\3rd-parties\react\react.development.js" />
+    <Content Include="system\3rd-parties\retargetEvents\retargetEvents.js" />
     <Content Include="system\3rd-parties\system\system.js" />
     <Content Include="system\3rd-parties\tablesorter\jquery.tablesorter.min.js" />
     <Content Include="system\3rd-parties\tablesorter\jquery.tablesorter.widgets.min.js" />
@@ -480,6 +495,9 @@
   <ItemGroup>
     <Folder Include="private\framboJSe.ext\snippets\" />
     <Folder Include="private\framboJSe.ext\widgets\" />
+    <Folder Include="private\modules\hybrid\controller\" />
+    <Folder Include="private\modules\hybrid\model\" />
+    <Folder Include="private\modules\hybrid\presenter\" />
     <Folder Include="private\resources\images\" />
     <Folder Include="private\resources\js\" />
     <Folder Include="private\resources\pdf\" />
