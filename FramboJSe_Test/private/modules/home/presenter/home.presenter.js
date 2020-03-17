@@ -17,6 +17,7 @@ define([
 	var _module = {};																				// Mapping of the current module
 	var _resources = {};																					// Mapping of the additional resources (.css and/or .js files)
 	var _wsGetSettings;
+	var _wsGetSettingsYeap;
 	// ** Global variables **
 	var _xml = '';																					// XML data (to show)
 	var _pageID = '';																					// Sitemap/page ID
@@ -83,6 +84,7 @@ define([
 		_module.fn = pBase.fnName(arguments);															// Traces the current function
 		_xml = $.parseXML(params.RawData);														// Transforms raw XML data into an XML document
 		_wsGetSettings = params.wsGetSettings;
+		_wsGetSettingsYeap = params.wsGetSettingsYeap;
 		th.Render({
 			code: _templateID[0],
 			XML: _xml,
@@ -112,6 +114,7 @@ define([
 				render_template_page({																	// Carica il template nel DOM
 					templateHtml: result,
 					wsGetSettings: _wsGetSettings,
+					wsGetSettingsYeap: _wsGetSettingsYeap,
 				});
 				render_template_values({																// Costruisce il contenuto del template
 				});
@@ -125,26 +128,16 @@ define([
 				pBase.RedirectToErrorPage(result.code, result.descr, _module);
 			}
 		});
-
-		// Renders the Dashboard
-		//dashboard.Render({});
-
-		// Renders the menu
-		//menu.Render({active: _pageID});
-
 	}
 
-	// FUNCTION: render_template_page
-	//  Initializes the custom elements in the page.
-	// PARAMS:
-	//  params.templateHtml : the precompiled HTML template
-	// RETURN:
-	//  none
 	function render_template_page(params) {
 
 		$(_pageContainer).html(params.templateHtml);													// Fills the HTML's case with the precompiled HTML template
 		jQuery.noConflict();																			// Prevent jquery and bootstrap scripts conflicting because declared twice
-		$("#div_ContentAnswer").text(params.wsGetSettings);
+		$("#div_ContentAnswer").text(params.wsGetSettings.RawData);
+		$("#Div_TimeAnswer").append(params.wsGetSettings.ResponseTime);
+		$("#div_ContentAnswerYeap").text(params.wsGetSettingsYeap.RawData);
+		$("#Div_TimeAnswerYeap").append(params.wsGetSettingsYeap.ResponseTime);
 
 
 
@@ -159,74 +152,18 @@ define([
 		}
 	}
 
-
-	// FUNCTION: render_template_values
-	//  Initializes the custom elements in the page.
-	// PARAMS:
-	//  params.onSave : event handler (callback) for "Save" button click.
-	// RETURN:
-	//  none
 	function render_template_values(params) {
 
-		//var saveCallBack = params.onSave;
-		// ...
-
-		$('#preloader').attr('style', 'display:none');													// Hides the "preloader" layer
-		//	modals.ShowOK({target: _modalsContainer});
-
-		if (location.hash != '') {
-			y = $(location.hash).offset();
-			if (!isNaN(y)) window.scrollTo(0, $(location.hash).offset().top)
-		}
-
-		$('h3.card-header').click(function () {
-			x = $(this).attr('aria-expanded');
-			if (x == 'false') {
-				$(this).addClass('active');
-			} else {
-				$(this).removeClass('active');
-			}
+		$("#btn_Chiamata-Yeap").click(function (e) {
+			e.preventDefault();
+			alert("you click me");
 		});
 
-
-		$('.ground').click(function () {
-			var c = $(this).css('background');
-			var vals = c.substring(c.indexOf('(') + 1, c.length - 1).split(', ');
-			var hexString = '[ Codice: #';
-			for (i = 0; i < 3; i++) {
-				var h = parseInt(vals[i]).toString(16);
-				if (h.length % 2) { h = '0' + h; }
-				hexString += h
-			}
-			hexString += ' ]';
-
-			var pDiv = $(this).parents()[2];
-			$(pDiv).find('.colorCode').html(hexString);
-			$(pDiv).find('.ground').removeClass('selected');
-			$(this).addClass('selected');
-		});
-
-
-		$('.fontSizes').change(function () {
-			var target = $(this).attr('ref');
-			var oldVal = $(this).attr('current');
-			var newVal = $(this).val();
-
-			//$(target + ' span').removeClass(oldVal).addClass(newVal);
-			$(target + ' ul').removeClass(oldVal).addClass(newVal);
-			$(this).attr('current', newVal);
-		});
 
 	}
 
 
-	// FUNCTION: render_snippet
-	//  Resolves snippet and assigns callback functions to the new DOM elements
-	// PARAMS:
-	//  params.domain           : name of the domain (container ID) the snippet belongs to
-	//  params.onDeleteCallback : event handler (callback) for "Delete" button click.
-	// RETURN:
-	//  none
+
 	function render_snippet(params) {
 
 		var saveCallBack = params.onSaveCallBack														// Pulsante "Salva"
@@ -240,13 +177,7 @@ define([
 		});
 
 
-		// FUNCTION: snippetsCallBack
-		//  Handles the callbacks for the new DOM elements (snippets replacement)
-		// PARAMS:
-		//  params.domain  : name of the domain (container ID) the snippet belongs to
-		//  params.snippet : name of the snippet to be processed
-		// RETURN:
-		//  none
+
 		function snippetsCallBack(params) {
 
 			var domain = params.domain;											// Default: _templateContainer or "" (empty)
@@ -254,9 +185,6 @@ define([
 
 			switch (snippet) {
 
-				//	case '(nome snippet)':
-				//	break;
-				//
 				default:
 
 			}

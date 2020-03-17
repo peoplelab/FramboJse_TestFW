@@ -105,7 +105,7 @@ define(['modals'], function (modals) {
 		}
 
 		$('#preloader').attr('style', 'display:block');						// Shows the "preloader" layer
-
+		var compilationeTime;
 		const authorization = (params.endpoint.includes('login')) ? 'BASIC QzFBMDNCMTAtN0Q1OS00MDdBLUE5M0UtQjcxQUIxN0FEOEMyOjE3N0UzMjk1LTA2NTYtNDMxNy1CQzkxLUREMjcxQTE5QUNGRg=='
 			: 'BEARER ' + params.auth;
 		const loginservice = (params.endpoint.includes('login')) ? null : '1';
@@ -115,14 +115,21 @@ define(['modals'], function (modals) {
 			data: '{data : "' + params.body + '"}',
 			processData: params.processData,
 			contentType: "application/json",
-			headers: {
+			//headers: {
 
-				'Authorization': authorization,
-				loginservice
-			},
-
+			//	'Authorization': authorization,
+			//	loginservice
+			//},
+			start_time: new Date().getTime(),
+			//complete: function (data) {
+			//	compilationeTime = (new Date().getTime() - this.start_time) + ' ms';
+			//	console.log('This request took ' + compilationeTime);
+			//},
 			dataType: "json",
 			success: function (response) {
+				compilationeTime = (new Date().getTime() - this.start_time) + ' ms';
+				console.log('This request took ' + compilationeTime);
+				response.compilationeTime = compilationeTime;
 				onAjaxSuccess(params, response);
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
@@ -243,7 +250,8 @@ define(['modals'], function (modals) {
 				return params.onSuccess({
 					ResponseCode: responseCode,
 					ResponseMessage: responseMessage,
-					RawData        : response.d 
+					RawData: response.d,
+					ResponseTime: response.compilationeTime
 				});
 		}
 

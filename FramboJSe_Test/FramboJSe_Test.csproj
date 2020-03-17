@@ -149,6 +149,8 @@
     <Content Include="private\resources\css\tipografici.min.css">
       <DependentUpon>tipografici.css</DependentUpon>
     </Content>
+    <Content Include="private\resources\images\go_back.png" />
+    <Content Include="private\resources\images\Go_Back2.png" />
     <Content Include="private\templates\demo\index.html" />
     <Content Include="private\templates\home\home.html" />
     <Content Include="private\templates\home\new_home.html" />
@@ -160,52 +162,18 @@
     <Content Include="public\FramboJSe_Test.ext\widgets\widgetsList.pub.js" />
     <Content Include="public\login\login.html" />
     <Content Include="public\login\login.js" />
+    <Content Include="public\login\t.html" />
     <Content Include="public\modules\myModuleSample\controller\mySample.controller.js" />
     <Content Include="public\modules\myModuleSample\model\mySample.model.js" />
     <Content Include="public\modules\myModuleSample\presenter\mySample.presenter.js" />
+    <Content Include="public\resources\css\main.css" />
+    <Content Include="public\resources\css\util.css" />
+    <Content Include="public\resources\js\main.js" />
     <Content Include="public\templates\templatesList.pub.js" />
     <Content Include="public\ws\Base.asmx" />
     <Content Include="public\ws\General.asmx" />
     <Content Include="public\ws\Login.asmx" />
     <Content Include="public\ws\xsd\Login.xml" />
-    <Content Include="reserved\aspx\home.aspx" />
-    <Content Include="reserved\config.rsv.js" />
-    <Content Include="reserved\config-old.rsv.js" />
-    <Content Include="reserved\framboJSe.ext\routerList.rsv.js" />
-    <Content Include="reserved\framboJSe.ext\sitemapCustomization.pvt.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\dd_elenchiQA.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\dd_settoriAzienda.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\dd_tipologieAzienda.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\infoPopup.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\labelCode.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\snippetsList.pvt.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\XML_label.js" />
-    <Content Include="reserved\framboJSe.ext\snippets\XML_label_economics.js" />
-    <Content Include="reserved\framboJSe.ext\widgets\btnConsole.js" />
-    <Content Include="reserved\framboJSe.ext\widgets\drawerTitle.js" />
-    <Content Include="reserved\framboJSe.ext\widgets\input_scaled.js" />
-    <Content Include="reserved\framboJSe.ext\widgets\widgetsList.pvt.js" />
-    <Content Include="reserved\modules\home\controller\home.controller.js" />
-    <Content Include="reserved\resources\css\costanti.css" />
-    <Content Include="reserved\resources\css\costanti.min.css" />
-    <Content Include="reserved\resources\css\datagrid.css" />
-    <Content Include="reserved\resources\css\datagrid.min.css" />
-    <Content Include="reserved\resources\css\fromYeap.css" />
-    <Content Include="reserved\resources\css\fromYeap.min.css" />
-    <Content Include="reserved\resources\css\graphics.css" />
-    <Content Include="reserved\resources\css\graphics.min.css" />
-    <Content Include="reserved\resources\css\main.pub.css" />
-    <Content Include="reserved\resources\css\main.pub.min.css" />
-    <Content Include="reserved\resources\css\overrides.css" />
-    <Content Include="reserved\resources\css\overrides.min.css" />
-    <Content Include="reserved\resources\css\strutturali.css" />
-    <Content Include="reserved\resources\css\strutturali.min.css" />
-    <Content Include="reserved\resources\css\tipografici.css" />
-    <Content Include="reserved\resources\css\tipografici.min.css" />
-    <Content Include="reserved\resources\images\favicon.ico" />
-    <Content Include="reserved\resources\images\favicon32.ico" />
-    <Content Include="reserved\resources\images\favicon32.png" />
-    <Content Include="reserved\resources\images\pmLogo.gif" />
     <Content Include="system\3rd-parties\bootstrap\css\bootstrap.min.css" />
     <Content Include="system\3rd-parties\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="system\3rd-parties\colorbox\colorbox.css" />
@@ -417,34 +385,11 @@
       <DependentUpon>General.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reserved\aspx\home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reserved\aspx\home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="reserved\aspx\reserved.Master.cs">
-      <DependentUpon>reserved.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reserved\aspx\reserved.Master.designer.cs">
-      <DependentUpon>reserved.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="system\3rd-parties\datepicker\datepicker.less" />
     <Content Include="system\3rd-parties\_datepicker\datepicker.less" />
-    <Content Include="reserved\aspx\reserved.Master" />
-    <Content Include="reserved\resources\css\costanti.less" />
-    <Content Include="reserved\resources\css\datagrid.less" />
-    <Content Include="reserved\resources\css\fromYeap.less" />
-    <Content Include="reserved\resources\css\graphics.less" />
-    <Content Include="reserved\resources\css\main.pub.css.map" />
-    <Content Include="reserved\resources\css\overrides.less" />
-    <Content Include="reserved\resources\css\strutturali.less" />
-    <Content Include="reserved\resources\css\tipografici.less" />
     <Content Include="private\aspx\private.Master" />
     <Content Include="private\resources\css\costanti.less" />
     <Content Include="private\resources\css\datagrid.less" />
@@ -480,7 +425,6 @@
   <ItemGroup>
     <Folder Include="private\framboJSe.ext\snippets\" />
     <Folder Include="private\framboJSe.ext\widgets\" />
-    <Folder Include="private\resources\images\" />
     <Folder Include="private\resources\js\" />
     <Folder Include="private\resources\pdf\" />
     <Folder Include="private\templates\moduleName\" />
@@ -489,19 +433,12 @@
     <Folder Include="public\modules\common\controller\" />
     <Folder Include="public\modules\common\model\" />
     <Folder Include="public\modules\common\presenter\" />
-    <Folder Include="public\resources\css\" />
+    <Folder Include="public\resources\fonts\iconic\" />
     <Folder Include="public\resources\images\" />
-    <Folder Include="public\resources\js\" />
     <Folder Include="public\resources\pdf\" />
+    <Folder Include="public\resources\vendor\" />
     <Folder Include="public\templates\moduleName\" />
     <Folder Include="public\xml\" />
-    <Folder Include="reserved\framboJSe.ext\plugins\" />
-    <Folder Include="reserved\modules\home\model\" />
-    <Folder Include="reserved\modules\home\presenter\" />
-    <Folder Include="reserved\resources\css\datagrid\" />
-    <Folder Include="reserved\resources\js\" />
-    <Folder Include="reserved\resources\pdf\" />
-    <Folder Include="reserved\templates\" />
     <Folder Include="system\FramboJSe_Test.fw\libs\css\" />
     <Folder Include="system\resources\images\" />
     <Folder Include="system\resources\js\" />

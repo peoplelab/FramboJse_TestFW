@@ -1,9 +1,37 @@
 ﻿<reserved_header_section templateID="205"
-                         templateFile="new_home.html"
-                         templateDescription="HTML content template (home)">
+						 templateFile="new_home.html"
+						 templateDescription="HTML content template (home)">
 </reserved_header_section>
 
-    <h1>Test Login Home</h1>
-    <br><br>
-    <div id="div_ContentAnswer" style="white-space: pre;"></div>
-    
+<h1>Home Page</h1>
+<br>
+<br>
+<a href="/public/login/login.html">
+	<img src="../private/resources/images/Go_Back2.png"
+		 width=150" height="70" />
+</a>
+<br><br>
+<h3 style="text-align: center; text-decoration: underline;"> Chiamata tramite il GateWay</h3>
+<br><br>
+<h4 id="Div_TimeAnswer">Response Time: </h4>
+<br>
+<a data-toggle="collapse" data-target="#div_collapse" ><div style="text-align: center;"><hr><i class="fas fa-plus"></i></div></a>
+<div id="div_collapse" class="collapse">
+	<br>
+	<h4>Response Data: </h4>
+	<div id="div_ContentAnswer" style="white-space: pre;"></div>
+</div>
+<hr>
+<br><br>
+<br><br>
+<h3 style="text-align: center; text-decoration: underline;"> Chiamata diretta a Yeap</h3>
+<br><br>
+<h4 id="Div_TimeAnswerYeap">Response Time: </h4>
+<br>
+<a data-toggle="collapse" data-target="#div_collapseYeap" style="text-align: center;"><div style="text-align: center;"><hr><i class="fas fa-plus"></i></div></a>
+<div id="div_collapseYeap" class="collapse">
+	<br>
+	<h4>Response Data: </h4>
+	<div id="div_ContentAnswerYeap" style="white-space: pre;"></div>
+</div>
+<hr>

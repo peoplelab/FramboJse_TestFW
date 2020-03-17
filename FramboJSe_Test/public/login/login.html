@@ -6,17 +6,10 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
 
-		/*  jQuery function is the entrance function that jQuery execute.
-		*
-		*   Below code means when the html document load ready, this is similar to window.onload() = function(){......};
-		*
-		*   You can also use $(document).ready(function(){......}), $ is an alias of jQuery.
-		*
-		*   You can even use $(function(){......}) to process document load ready event.
-		* */
-		jQuery(document).ready(function () {
+	jQuery(document).ready(function () {
 
 			$("#click_button").click(function () {
+				$('#preloader').attr('style', 'display:block');
 				var username = $("#username").val();
 				var password = $("#password").val();
 
@@ -33,15 +26,17 @@
 
 					dataType: "json",
 					success: function (response) {
+						$('#preloader').attr('style', 'display:none');
 						var _ans = onAjaxResponse(response);
 						if (_ans.ResponseCode == 0) {
 							onAjaxSuccess(_ans.RawData);
 						} else {
 							alert(_ans.ResponseMessage);
-						} 
+						}
 						console.log("ans: " + _ans);
 					},
 					error: function (jqXHR, textStatus, errorThrown, response) {
+						$('#preloader').attr('style', 'display:none');
 						var _ans = onAjaxResponse(response);
 						alert("error");
 						consoe.log(_ans);
@@ -84,7 +79,7 @@
 	</script>
 </head>
 <body>
-	<h3>login</h3>
+	<h3>login Page</h3>
 	<input type="text" id="username" name="username">
 	<br><br>
 	<input type="text" id="password" name="password">
