@@ -1,91 +1,86 @@
 ﻿<!DOCTYPE html>
-<html>
+<html >
 <head>
-	<meta charset="utf-8" />
-	<title></title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript">
-
-	jQuery(document).ready(function () {
-
-			$("#click_button").click(function () {
-				$('#preloader').attr('style', 'display:block');
-				var username = $("#username").val();
-				var password = $("#password").val();
-
-				var savedAjaxOptions = {
-					type: "POST",
-					url: "/api/login",
-					data: '{data : "<?xml version=\'1.0\' encoding=\'utf-8\' ?><Request ID=\'20200303082855863\'><General><Token>undefined</Token></General><Data><Username>' + username + '</Username><Password>' + password + '</Password></Data></Request>"}',
-
-					contentType: "application/json",
-					headers: {
-
-						'Authorization': "BASIC QzFBMDNCMTAtN0Q1OS00MDdBLUE5M0UtQjcxQUIxN0FEOEMyOjE3N0UzMjk1LTA2NTYtNDMxNy1CQzkxLUREMjcxQTE5QUNGRg=="
-					},
-
-					dataType: "json",
-					success: function (response) {
-						$('#preloader').attr('style', 'display:none');
-						var _ans = onAjaxResponse(response);
-						if (_ans.ResponseCode == 0) {
-							onAjaxSuccess(_ans.RawData);
-						} else {
-							alert(_ans.ResponseMessage);
-						}
-						console.log("ans: " + _ans);
-					},
-					error: function (jqXHR, textStatus, errorThrown, response) {
-						$('#preloader').attr('style', 'display:none');
-						var _ans = onAjaxResponse(response);
-						alert("error");
-						consoe.log(_ans);
-						console.log(jqXHR, textStatus, errorThrown);
-					},
-					canRedirect: 1
-
-				};
-				$.ajax(savedAjaxOptions);
-			});
-			function onAjaxResponse(response) {
-
-				var xmlDoc = $.parseXML(response.d);
-				var data = $(xmlDoc);
-				var responseCode = parseInt($(data).find("Response>Result>Codice").text());
-				var responseMessage = decodeURIComponent($(data).find("Response>Result>Descrizione").text());
-				return {
-					ResponseCode: responseCode,
-					ResponseMessage: responseMessage,
-					RawData: response.d
-				};
-			}
-			function onAjaxSuccess(data) {
-				var parser = new DOMParser();
-				var xmlDoc = parser.parseFromString(data, "text/xml");
-				var _auth = xmlDoc.getElementsByTagName("AccessToken")[0].childNodes[0].nodeValue;
-				__WACookie = { 'result': _auth };
-				setCookie("FramboJSe_TestWAPars", JSON.stringify(__WACookie), 1);
-				location.href = "/home/new_home";
-			}
-
-		});
-		function setCookie(cname, cvalue, exdays) {
-			var d = new Date();
-			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-			var expires = "expires=" + d.toUTCString();
-			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-		}
-
-	</script>
+	<title>FramboJSe_Test - Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../resources/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../resources/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resources/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-	<h3>login Page</h3>
-	<input type="text" id="username" name="username">
-	<br><br>
-	<input type="text" id="password" name="password">
-	<br><br>
-	<button id="click_button">
-		login
-	</button>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+
+
+					<div class="wrap-input100 validate-input" >
+						<input id="username" class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input id="password" class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button id="click_button" class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="../resources/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/bootstrap/js/popper.js"></script>
+	<script src="../resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../resources/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../resources/js/main.js"></script>
+
 </body>
 </html>

@@ -13,8 +13,8 @@ define([
 	// Web services endpoint constant definition
 	var _ENDPOINT_GET = '/api/config/General_Get';
 	var _ENDPOINT_LOGIN = '/api/login';
-	var _ENDPOINT_GETYeap = 'https://test-yeap.people-manager.it:8082/public/ws/config.asmx/General_Get'
-//'/apiyeap/public/ws/config.asmx/General_Get';
+	var _ENDPOINT_GETYeap = '/apiyeap/public/ws/config.asmx/General_Get';
+//'https://test-yeap.people-manager.it:8082/public/ws/config.asmx/General_Get'
 
 
 

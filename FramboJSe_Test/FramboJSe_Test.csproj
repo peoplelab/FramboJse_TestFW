@@ -160,9 +160,8 @@
     <Content Include="public\config.pub.js" />
     <Content Include="public\FramboJSe_Test.ext\snippets\snippetsList.pub.js" />
     <Content Include="public\FramboJSe_Test.ext\widgets\widgetsList.pub.js" />
+    <Content Include="public\login\old_login.html" />
     <Content Include="public\login\login.html" />
-    <Content Include="public\login\login.js" />
-    <Content Include="public\login\t.html" />
     <Content Include="public\modules\myModuleSample\controller\mySample.controller.js" />
     <Content Include="public\modules\myModuleSample\model\mySample.model.js" />
     <Content Include="public\modules\myModuleSample\presenter\mySample.presenter.js" />

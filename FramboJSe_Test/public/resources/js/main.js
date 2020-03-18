@@ -1,7 +1,5 @@
 
-(function ($) {
-    "use strict";
-
+jQuery(document).ready(function () {
 
     /*==================================================================
     [ Focus input ]*/
@@ -15,11 +13,6 @@
             }
         })
     })
-
-
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
 
 
     $("#click_button").click(function () {
@@ -83,43 +76,12 @@
         setCookie("FramboJSe_TestWAPars", JSON.stringify(__WACookie), 1);
         location.href = "/home/new_home";
     }
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-
-    /*==================================================================
-    [ Show pass ]*/
-    var showPass = 0;
-    $('.btn-show-pass').on('click', function () {
-        if (showPass == 0) {
-            $(this).next('input').attr('type', 'text');
-            $(this).find('i').removeClass('zmdi-eye');
-            $(this).find('i').addClass('zmdi-eye-off');
-            showPass = 1;
-        }
-        else {
-            $(this).next('input').attr('type', 'password');
-            $(this).find('i').addClass('zmdi-eye');
-            $(this).find('i').removeClass('zmdi-eye-off');
-            showPass = 0;
-        }
-
-    });
+});
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
 
-})(jQuery);

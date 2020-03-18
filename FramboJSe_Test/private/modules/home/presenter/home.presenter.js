@@ -51,34 +51,13 @@ define([
 		}
 
 	}
-
-	// FUNCTION: init
-	//  Initializes the HTML page objects for UI render
-	// PARAMS:
-	//  params.page_id : page ID
-	// RETURN:
-	//  none
 	function init(params) {
 
 		_module.id = SystemJS.map.currentPresenter.replace(location.origin, '');						// Determina il 
 		_pageID = params.pageID;
 		_templateID = params.templateID;
-
-		// Initializes Pagedashboard
-		//dashboard.Init({ container: "dashboard" });
-
-		// Initializes Menu
-		//menu.Init({ container: _menuContainer });
 	}
 
-
-	// FUNCTION: renderPage
-	//  Starts process of getting the HTML template, fills it with XML values and initializes its custom elements
-	// PARAMS:
-	//  params.rawData             : XML raw data.
-	//  params.onDeleteButtonClick : event handler (callback) for "Delete" button click.
-	// RETURN:
-	//  none
 	function renderPage(params) {
 
 		_module.fn = pBase.fnName(arguments);															// Traces the current function
@@ -88,28 +67,6 @@ define([
 		th.Render({
 			code: _templateID[0],
 			XML: _xml,
-			//	onSuccess: function (result) {																// NOTA: gestione presa da Yeap, dove prima della render_template doveva essere eseguita un'altra funzione asincrona
-			//	
-			//		var html = result;
-			//
-			//		resources.XmlEconomics({
-			//			onSuccess: function(result) {
-			//				__Preloads.economics = result;
-			//		
-			//				render_template_page({ 
-			//					templateHtml  : html,
-			//					xmlDocument   : _xml,
-			//				});
-			//				render_snippet({
-			//					domain: _pageContainer,														// Define the range for snippets' resolution. (Default: _templateContainer -> Applies to the template container. Should be also: "" -> Applies to the whole document)
-			//				//	onSaveCallBack: params.OnSave,												// Callback per salvataggio dati.
-			//				//	onCompile     : params.Compile,												// Callback per salvataggio dati.
-			//				});
-			//				pBase.LoadResources(_resources);												// Loads additional resources (.css and/or .js)
-			//
-			//			}
-			//		});
-			//	},
 			onSuccess: function (result) {
 				render_template_page({																	// Carica il template nel DOM
 					templateHtml: result,
@@ -142,23 +99,8 @@ define([
 
 
 	}
-	function objectIsEmpty(object) {
-		if (Object.keys(object.result).length === 0 && object.result.constructor === Object) {
-			console.log(" " + object + " is empty!");
-			return false;
-		} else {
-			console.log(" " + object + " is not empty !");
-			return true;
-		}
-	}
 
 	function render_template_values(params) {
-
-		$("#btn_Chiamata-Yeap").click(function (e) {
-			e.preventDefault();
-			alert("you click me");
-		});
-
 
 	}
 
